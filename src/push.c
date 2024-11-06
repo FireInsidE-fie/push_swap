@@ -14,12 +14,18 @@
 
 void	ft_pa(t_slab **stack1, t_slab **stack2)
 {
-	// NOT FINISHED (need to update **stack2)
+	t_slab	**tmp;
+
+	tmp = &((*stack2)->next);
 	(*stack2)->next = *stack1;
+	stack2 = tmp;
 }
 
 void	ft_pb(t_slab **stack1, t_slab **stack2)
 {
-	// NOT FINISHED (need to update **stack1)
+	t_slab	**tmp;
+
+	tmp = &((*stack1)->next);
 	(*stack1)->next = *stack2;
+	stack1 = tmp;
 }
