@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 // Linked list element definition
 typedef struct	s_slab
@@ -20,6 +20,10 @@ typedef struct	s_slab
 	struct s_slab	*next;
 } t_slab;
 
+// Libft
+# include "../libft/libft.h"
+
+// Operation function prototypes
 void ft_sa(t_slab **stack1, t_slab **stack2);
 void ft_sb(t_slab **stack1, t_slab **stack2);
 void ft_ss(t_slab **stack1, t_slab **stack2);
