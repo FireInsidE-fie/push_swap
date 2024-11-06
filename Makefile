@@ -1,6 +1,6 @@
 NAME		=	push_swap
 CC			=	cc
-CFLAGS		=	-Wall -Wextra
+CFLAGS		=	-Wall -Wextra -Werror
 RM			=	rm
 RMFLAGS		=	-f
 SRCDIR		=	src/
@@ -15,26 +15,26 @@ IFILES		=	push_swap.h
 LIBFTDIR	=	libft
 LIBFT		=	$(LIBFTDIR)/libft.a
 
-all:		$(NAME)
+all:			$(NAME)
 
 
-$(NAME):	$(LIBFT) $(OBJS)
-			$(CC) $^ -o $@
+$(NAME):		$(LIBFT) $(OBJS)
+				$(CC) $^ -o $@
 
-%.o:		%.c
-			$(CC) $(CFLAGS) -c $^ -o $@
+%.o:			%.c
+				$(CC) $(CFLAGS) -c $^ -o $@
 
-$(LIBFT): 	$(LIBFTDIR)/*.c
-			cd $(LIBFTDIR) && make
+$(LIBFT):	 	$(LIBFTDIR)/*.c
+				cd $(LIBFTDIR) && make
 
 clean:
-			$(RM) $(RMFLAGS) $(OBJS)
+				$(RM) $(RMFLAGS) $(OBJS)
 
-fclean:		clean
-			$(RM) $(RMFLAGS) $(NAME)
-			cd $(LIBFTDIR) && make fclean
+fclean:			clean
+				$(RM) $(RMFLAGS) $(NAME)
+				cd $(LIBFTDIR) && make fclean
 
-re:			fclean all
+re:				fclean all
 
 
-.PHONY:		all clean fclean re
+.PHONY:			all clean fclean re
