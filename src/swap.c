@@ -14,12 +14,22 @@
 
 void	ft_sa(t_slab **stack1, t_slab **stack2)
 {
-	
+	t_slab	*tmp;
+
+	(void)stack2;
+	tmp = ((*stack1)->next)->next;
+	((*stack1)->next)->next = *stack1;
+	(*stack1)->next = tmp;
 }
 
 void	ft_sb(t_slab **stack1, t_slab **stack2)
 {
-	
+	t_slab	*tmp;
+
+	(void)stack1;
+	tmp = ((*stack2)->next)->next;
+	((*stack2)->next)->next = *stack2;
+	(*stack2)->next = tmp;
 }
 
 void	ft_ss(t_slab **stack1, t_slab **stack2)
