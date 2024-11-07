@@ -17,6 +17,8 @@ void	ft_ra(t_slab **stack1, t_slab **stack2)
 	t_slab	*slab;
 	t_slab	*tmp;
 
+	if (!stack1 || !(*stack1) || !((*stack1)->next))
+		return ;
 	(void)stack2;
 	slab = *stack1;
 	while (slab->next && (slab->next)->next)
@@ -32,6 +34,8 @@ void	ft_rb(t_slab **stack1, t_slab **stack2)
 	t_slab	*slab;
 	t_slab	*tmp;
 
+	if (!stack2 || !(*stack2) || !((*stack2)->next))
+		return ;
 	(void)stack1;
 	slab = *stack2;
 	while (slab->next && (slab->next)->next)
