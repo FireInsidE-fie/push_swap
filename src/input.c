@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:10:52 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/08 11:27:36 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/08 13:30:52 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,16 @@ t_slab	**ft_parse_input(char **argv)
 {
 	t_slab	**integers;
 
+	integers = 0;
 	while (*argv)
 	{
-		ft_atoi(*argv); // Need a version of atoi that stops if a space is found
 		while (**argv)
 		{
 			if (**argv == ' ')
-				ft_atoi(++(*argv));
+				slab_add_back(integers, slab_new(ft_atoi(++(*argv))));
 			(*argv)++;
 		}
+		argv++;
 	}
 	return (integers);
 }

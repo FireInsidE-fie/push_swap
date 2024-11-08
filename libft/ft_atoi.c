@@ -6,12 +6,12 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 21:46:02 by estettle          #+#    #+#             */
-/*   Updated: 2024/10/10 21:18:53 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/08 12:53:33 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
- * @brief Convers a string into its integer representation.
+ * @brief Converts a string into its integer representation.
  * This function accepts any number of white space (isspace(3)) as a suffix,
  * as well as one minus (-) or plus (-) sign.
  *
