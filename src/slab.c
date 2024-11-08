@@ -41,7 +41,10 @@ void	slab_add_back(t_slab **lst, t_slab *new)
 	t_slab	*last;
 
 	last = slab_last(*lst);
-	last->next = new;
+	if (!last)
+		*lst = new;
+	else
+		last->next = new;
 }
 
 void	slab_add_front(t_slab **lst, t_slab *new)

@@ -24,7 +24,7 @@ $(NAME):		$(LIBFT) $(OBJS)
 				$(CC) $^ -o $@
 
 %.o:			%.c
-				$(CC) $(CFLAGS) -c $^ -o $@
+				$(CC) $(CFLAGS) -g -c $^ -o $@
 
 $(LIBFT):	 	$(LIBFTDIR)/*.c
 				cd $(LIBFTDIR) && make
