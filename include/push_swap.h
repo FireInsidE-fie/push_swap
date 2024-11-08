@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:46:51 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/06 13:15:23 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/08 13:18:44 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,11 @@ void	ft_rr(t_slab **stack1, t_slab **stack2);
 void	ft_rra(t_slab **stack1, t_slab **stack2);
 void	ft_rrb(t_slab **stack1, t_slab **stack2);
 void	ft_rrr(t_slab **stack1, t_slab **stack2);
+
+// Chained lists management function prototypes
+t_slab	*slab_new(int nb);
+t_slab	*slab_last(t_slab *lst);
+void	slab_add_back(t_slab **lst, t_slab *new);
+void	slab_add_front(t_slab **lst, t_slab *new);
 
 #endif // PUSH_SWAP_H
