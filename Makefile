@@ -8,7 +8,9 @@ CFILES		=	$(SRCDIR)push_swap.c\
 				$(SRCDIR)push.c \
 				$(SRCDIR)rotate.c \
 				$(SRCDIR)swap.c \
-				$(SRCDIR)r_rotate.c
+				$(SRCDIR)r_rotate.c \
+				$(SRCDIR)slab.c \
+				$(SRCDIR)input.c
 OBJS		=	$(CFILES:.c=.o)
 INCLDIR		=	include/
 IFILES		=	push_swap.h
@@ -36,5 +38,8 @@ fclean:			clean
 
 re:				fclean all
 
+
+debug:			$(LIBFT) $(OBJS)
+				$(CC) $^ -g -o $@
 
 .PHONY:			all clean fclean re
