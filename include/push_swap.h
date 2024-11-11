@@ -41,7 +41,7 @@ t_slab	**ft_parse_input(int argc, char **argv);
 
 // Chained lists management function prototypes
 t_slab	*slab_new(int nb);
-t_slab	*slab_last(t_slab **lst);
+t_slab	*slab_last(t_slab *lst);
 void	slab_add_back(t_slab **lst, t_slab *new);
 void	slab_add_front(t_slab **lst, t_slab *new);
 

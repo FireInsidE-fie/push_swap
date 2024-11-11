@@ -28,21 +28,20 @@ t_slab	*slab_new(int nb)
 	return (new_slab);
 }
 
-t_slab	*slab_last(t_slab **lst)
+t_slab	*slab_last(t_slab *lst)
 {
-	// wait........ this sucks (need to decide on double pointer or single pointer
 	if (!lst)
 		return (NULL);
-	while ((*lst)->next)
-		*lst = (*lst)->next;
-	return (*lst);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
 
 void	slab_add_back(t_slab **lst, t_slab *new)
 {
 	t_slab	*last;
 
-	last = slab_last(lst);
+	last = slab_last(*lst);
 	if (!last)
 		*lst = new;
 	else
