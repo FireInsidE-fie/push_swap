@@ -32,7 +32,7 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		return (-1);
-	stack1 = ft_parse_input(argv);
+	stack1 = ft_parse_input(argc, argv);
 	stack2 = 0;
 	(void)stack2;
 	print_stack(stack1);

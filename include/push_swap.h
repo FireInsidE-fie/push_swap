@@ -37,7 +37,7 @@ void	ft_rrb(t_slab **stack1, t_slab **stack2);
 void	ft_rrr(t_slab **stack1, t_slab **stack2);
 
 // Input parsing function prototypes
-t_slab	**ft_parse_input(char **argv);
+t_slab	**ft_parse_input(int argc, char **argv);
 
 // Chained lists management function prototypes
 t_slab	*slab_new(int nb);

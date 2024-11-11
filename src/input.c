@@ -23,23 +23,25 @@
  * @param argv The input from the program taken directly from the main() func.
  * @return A t_slab chained list with each element representing an integer.
  */
-t_slab	**ft_parse_input(char **argv)
+t_slab	**ft_parse_input(int argc, char **argv)
 {
+	int		i;
 	t_slab	**integers;
 	t_slab	*start;
 
-	start = slab_new(ft_atoi(++(*argv)));
+	i = 0;
+	start = slab_new(ft_atoi(argv[++i]));
 	integers = &start;
-	while (*argv)
+	while (i < argc - 1)
 	{
-		slab_add_back(integers, slab_new(ft_atoi(++(*argv))));
-		while (**argv)
+		slab_add_back(integers, slab_new(ft_atoi(argv[i++])));
+		while (*(argv[i]))
 		{
-			if (**argv == ' ')
-				slab_add_back(integers, slab_new(ft_atoi(++(*argv))));
-			(*argv)++;
+			if (*(argv[i]) == ' ')
+				slab_add_back(integers, slab_new(ft_atoi(++argv[i])));
+			argv[i]++;
 		}
-		argv++;
+		i++;
 	}
 	return (integers);
 }
