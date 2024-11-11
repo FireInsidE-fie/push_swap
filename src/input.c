@@ -27,11 +27,9 @@ t_slab	**ft_parse_input(int argc, char **argv)
 {
 	int		i;
 	t_slab	**integers;
-	t_slab	*start;
 
 	i = 1;
-	start = slab_new(ft_atoi(argv[i++]));
-	integers = &start;
+	integers = malloc(sizeof(t_slab *));
 	while (i < argc)
 	{
 		slab_add_back(integers, slab_new(ft_atoi(argv[i])));
