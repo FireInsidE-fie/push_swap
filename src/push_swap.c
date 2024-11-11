@@ -16,12 +16,15 @@
 
 void	print_stack(t_slab **list)
 {
-	if (!list)
+	t_slab	*slab;
+
+	if (!list || !(*list))
 		return ;
-	while ((*list)->next)
+	slab = *list;
+	while (slab)
 	{
-		printf("%i\n", (*list)->number);
-		list++;
+		printf("%i\n", slab->number);
+		slab = slab->next;
 	}
 }
 
@@ -34,6 +37,6 @@ int	main(int argc, char **argv)
 		return (-1);
 	stack1 = ft_parse_input(argc, argv);
 	stack2 = 0;
-	(void)stack2;
 	print_stack(stack1);
+	(void)stack2;
 }
