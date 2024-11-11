@@ -29,12 +29,12 @@ t_slab	**ft_parse_input(int argc, char **argv)
 	t_slab	**integers;
 	t_slab	*start;
 
-	i = 0;
-	start = slab_new(ft_atoi(argv[++i]));
+	i = 1;
+	start = slab_new(ft_atoi(argv[i]));
 	integers = &start;
 	while (i < argc - 1)
 	{
-		slab_add_back(integers, slab_new(ft_atoi(argv[i++])));
+		slab_add_back(integers, slab_new(ft_atoi(argv[i])));
 		while (*(argv[i]))
 		{
 			if (*(argv[i]) == ' ')

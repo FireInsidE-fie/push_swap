@@ -24,6 +24,7 @@ t_slab	*slab_new(int nb)
 
 	new_slab = malloc(sizeof(t_slab));
 	new_slab->number = nb;
+	new_slab->next = NULL;
 	return (new_slab);
 }
 
