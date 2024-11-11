@@ -26,10 +26,13 @@
 t_slab	**ft_parse_input(char **argv)
 {
 	t_slab	**integers;
+	t_slab	*start;
 
-	integers = 0;
+	start = slab_new(ft_atoi(++(*argv)));
+	integers = &start;
 	while (*argv)
 	{
+		slab_add_back(integers, slab_new(ft_atoi(++(*argv))));
 		while (**argv)
 		{
 			if (**argv == ' ')
