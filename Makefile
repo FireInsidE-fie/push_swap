@@ -14,14 +14,14 @@ CFILES		=	$(SRCDIR)push_swap.c\
 OBJS		=	$(CFILES:.c=.o)
 INCLDIR		=	include/
 IFILES		=	push_swap.h
-LIBFTDIR	=	libft
-LIBFT		=	$(LIBFTDIR)/libft.a
+LIBFTDIR	=	libft/
+LIBFT		=	$(LIBFTDIR)libft.a
 
 all:			$(NAME)
 
 
-$(NAME):		$(LIBFT) $(OBJS)
-				$(CC) $^ -o $@
+$(NAME):		$(OBJS) $(LIBFT)
+				$(CC) $(CFLAGS) $^ -o $@
 
 %.o:			%.c
 				$(CC) $(CFLAGS) -g -c $^ -o $@
@@ -39,8 +39,5 @@ fclean:			clean
 
 re:				fclean all
 
-
-debug:			$(LIBFT) $(OBJS)
-				$(CC) $^ -g -o $@
 
 .PHONY:			all clean fclean re
