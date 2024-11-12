@@ -31,6 +31,7 @@ $(LIBFT):	 	$(LIBFTDIR)/*.c
 
 clean:
 				$(RM) $(RMFLAGS) $(OBJS)
+				cd $(LIBFTDIR) && make clean
 
 fclean:			clean
 				$(RM) $(RMFLAGS) $(NAME)
