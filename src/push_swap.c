@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:49:24 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/12 17:59:43 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/12 18:08:21 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ int	main(int argc, char **argv)
 	print_stack(stack1);
 	ft_sa(stack1, stack2);
 	print_stack(stack1);
-	/*
 	ft_ra(stack1, stack2);
 	print_stack(stack1);
+	/*
 	ft_ra(stack1, stack2);
 	print_stack(stack1);
 	(void)stack2;
