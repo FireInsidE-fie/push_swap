@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:46:51 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/08 13:37:57 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/12 16:51:46 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_rrb(t_slab **stack1, t_slab **stack2);
 void	ft_rrr(t_slab **stack1, t_slab **stack2);
 
 // Input parsing function prototypes
-t_slab	**ft_parse_input(int argc, char **argv);
+t_slab	**parse_input(int argc, char **argv);
 
 // Chained lists management function prototypes
 t_slab	*slab_new(int nb);

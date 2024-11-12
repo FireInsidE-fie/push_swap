@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:10:52 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/08 13:30:52 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/12 16:51:31 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@
  * multiple (think the input for the program could be ./push_swap 1 2 "3" "4 5"
  * and so forth).
  *
+ * @param argc The number of elements in argv.
  * @param argv The input from the program taken directly from the main() func.
  * @return A t_slab chained list with each element representing an integer.
  */
-t_slab	**ft_parse_input(int argc, char **argv)
+t_slab	**parse_input(int argc, char **argv)
 {
 	int		i;
 	t_slab	**integers;
