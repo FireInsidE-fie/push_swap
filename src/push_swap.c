@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:49:24 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/12 16:53:52 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/12 17:03:17 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,14 @@ int	main(int argc, char **argv)
 		return (-1);
 	stack1 = parse_input(argc, argv);
 	stack2 = 0;
+	print_stack(stack1);
+	ft_sa(stack1, stack2);
+	print_stack(stack1);
+	ft_sb(stack1, stack2);
+	print_stack(stack1);
+	ft_ra(stack1, stack2);
+	print_stack(stack1);
+	ft_rb(stack1, stack2);
 	print_stack(stack1);
 	(void)stack2;
 }
