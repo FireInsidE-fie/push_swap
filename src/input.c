@@ -77,7 +77,6 @@ void	check_chars(int argc, char **argv)
 t_slab	**parse_input(int argc, char **argv)
 {
 	int		i;
-	t_slab	*slab;
 	t_slab	**integers;
 
 	i = 1;
@@ -85,21 +84,14 @@ t_slab	**parse_input(int argc, char **argv)
 	integers = malloc(sizeof(t_slab *));
 	if (!integers)
 		ft_kill(NULL, NULL, -1);
+	*integers = NULL;
 	while (i < argc)
 	{
-		slab = slab_new(ft_atoi(argv[i]));
-		if (!slab)
-			ft_kill(integers, NULL, -1);
-		slab_add_back(integers, slab);
+		slab_add_back(integers, slab_new(ft_atoi(argv[i])));
 		while (*argv[i])
 		{
 			if (*argv[i] == ' ')
-			{
-				slab = slab_new(ft_atoi(++argv[i]));
-				if (!slab)
-					ft_kill(integers, NULL, -1);
-				slab_add_back(integers, slab);
-			}
+				slab_add_back(integers, slab_new(ft_atoi(++argv[i])));
 			argv[i]++;
 		}
 		i++;

@@ -39,10 +39,21 @@ t_slab	*slab_last(t_slab *lst)
 	return (lst);
 }
 
+/**
+ * @brief Adds a slab element to the end of the given list.
+ *
+ * Kills the program if new is NULL, which would mean a malloc() failed in
+ * the parse_input function.
+ *
+ * @param lst The chained list to add the slab behind.
+ * @param new The slab element to add to the chained list.
+ */
 void	slab_add_back(t_slab **lst, t_slab *new)
 {
 	t_slab	*last;
 
+	if (!new)
+		ft_kill(lst, NULL, -1);
 	last = slab_last(*lst);
 	if (!last)
 		*lst = new;
