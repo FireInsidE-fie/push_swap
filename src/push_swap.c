@@ -45,9 +45,11 @@ int	main(int argc, char **argv)
 	print_stack(stack1);
 	ft_ra(stack1, stack2);
 	print_stack(stack1);
-	/*
+	ft_ra(stack1, stack2);
+	print_stack(stack1);
+	ft_ra(stack1, stack2);
+	ft_ra(stack1, stack2);
 	ft_ra(stack1, stack2);
 	print_stack(stack1);
 	(void)stack2;
-	*/
 }

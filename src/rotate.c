@@ -15,38 +15,34 @@
 void	ft_ra(t_slab **stack1, t_slab **stack2)
 {
 	t_slab	*first;
-	t_slab	*slast;
 	t_slab	*last;
 
 	if (!stack1 || !(*stack1) || !(*stack1)->next)
 		return ;
 	(void)stack2;
 	first = *stack1;
-	slast = *stack1;
-	while (slast->next && (slast->next)->next)
-		slast = slast->next;
-	last = slast->next;
-	last->next = first->next;
-	slast->next = first;
-	*stack1 = (slast->next)->next;
+	last = *stack1;
+	while (last->next)
+		last = last->next;
+	*stack1 = first->next;
+	last->next = first;
 	first->next = NULL;
 }
 
 void	ft_rb(t_slab **stack1, t_slab **stack2)
 {
 	t_slab	*first;
-	t_slab	*slast;
+	t_slab	*last;
 
 	if (!stack2 || !(*stack2) || !(*stack2)->next)
 		return ;
 	(void)stack1;
 	first = *stack2;
-	slast = *stack2;
-	while (slast->next && (slast->next)->next)
-		slast = slast->next;
-	(slast->next)->next = first->next;
-	slast->next = first;
-	*stack2 = (slast->next)->next;
+	last = *stack2;
+	while (last->next)
+		last = last->next;
+	*stack1 = first->next;
+	last->next = first;
 	first->next = NULL;
 }
 
