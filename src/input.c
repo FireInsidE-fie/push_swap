@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:10:52 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/12 17:55:52 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/13 15:06:21 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,18 +77,29 @@ void	check_chars(int argc, char **argv)
 t_slab	**parse_input(int argc, char **argv)
 {
 	int		i;
+	t_slab	*slab;
 	t_slab	**integers;
 
 	i = 1;
 	check_chars(argc, argv);
 	integers = malloc(sizeof(t_slab *));
+	if (!integers)
+		ft_kill(NULL, NULL, -1);
 	while (i < argc)
 	{
-		slab_add_back(integers, slab_new(ft_atoi(argv[i])));
+		slab = slab_new(ft_atoi(argv[i]));
+		if (!slab)
+			ft_kill(integers, NULL, -1);
+		slab_add_back(integers, slab);
 		while (*argv[i])
 		{
 			if (*argv[i] == ' ')
-				slab_add_back(integers, slab_new(ft_atoi(++argv[i])));
+			{
+				slab = slab_new(ft_atoi(++argv[i]));
+				if (!slab)
+					ft_kill(integers, NULL, -1);
+				slab_add_back(integers, slab);
+			}
 			argv[i]++;
 		}
 		i++;
