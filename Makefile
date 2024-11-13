@@ -21,10 +21,10 @@ all:			$(NAME)
 
 
 $(NAME):		$(OBJS) $(LIBFT)
-				$(CC) $(CFLAGS) $^ -o $@
+				$(CC) $(CFLAGS) $^ -fsanitize=address -o $@
 
 %.o:			%.c
-				$(CC) $(CFLAGS) -g -c $^ -o $@
+				$(CC) $(CFLAGS) -g -fsanitize=address -c $^ -o $@
 
 $(LIBFT):	 	$(LIBFTDIR)/*.c
 				cd $(LIBFTDIR) && make
