@@ -21,6 +21,18 @@
 //
 // Driver function to check the input, calling the other three
 
+/**
+ * @brief Checks all arguments inputted to the program for invalid characters.
+ *
+ * @details Specifically checks for digits, minus characters and spaces (in
+ * the case multiple integers are contained in the same argument). Everything
+ * else causes the program to ft_kill immediately.
+ *
+ * @see ft_kill()
+ *
+ * @param argc The number of arguments passed to the program.
+ * @param argv The arguments passed to the program.
+ */
 void	check_chars(int argc, char **argv)
 {
 	int	i;
