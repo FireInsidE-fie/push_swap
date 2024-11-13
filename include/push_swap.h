@@ -13,6 +13,10 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+// Libraries
+# include <unistd.h>
+# include <stdlib.h>
+
 // Linked list element definition
 typedef struct s_slab
 {
@@ -41,6 +45,7 @@ t_slab	*slab_new(int nb);
 t_slab	*slab_last(t_slab *lst);
 void	slab_add_back(t_slab **lst, t_slab *new);
 void	slab_add_front(t_slab **lst, t_slab *new);
+void	stack_clear(t_slab **lst);
 
 
 #endif // PUSH_SWAP_H

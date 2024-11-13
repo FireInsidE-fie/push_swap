@@ -53,3 +53,18 @@ void	slab_add_front(t_slab **lst, t_slab *new)
 	new->next = *lst;
 	*lst = new;
 }
+
+void	stack_clear(t_slab **lst)
+{
+	t_slab	*next_slab;
+
+	if (!lst)
+		return ;
+	while (*lst)
+	{
+		next_slab = (*lst)->next;
+		free(*lst);
+		*lst = next_slab;
+	}
+	lst = NULL;
+}
