@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+#include "../libft/libft.h"
 
 void	ft_rra(t_slab **stack1, t_slab **stack2)
 {

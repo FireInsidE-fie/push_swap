@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+#include "../libft/libft.h"
 
 /**
  * @brief Takes the raw input from push swap and parses it into a chained list

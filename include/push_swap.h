@@ -13,9 +13,6 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-// Libft
-# include "../libft/libft.h"
-
 // Linked list element definition
 typedef struct s_slab
 {
