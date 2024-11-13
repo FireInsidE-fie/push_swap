@@ -47,4 +47,3 @@ void	ft_ss(t_slab **stack1, t_slab **stack2)
 	ft_sa(stack1, stack2);
 	ft_sb(stack1, stack2);
 }
-

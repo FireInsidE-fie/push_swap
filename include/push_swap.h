@@ -47,5 +47,8 @@ void	slab_add_back(t_slab **lst, t_slab *new);
 void	slab_add_front(t_slab **lst, t_slab *new);
 void	stack_clear(t_slab **lst);
 
+// Util functions
+void	ft_kill(t_slab **stack1, t_slab **stack2, int error_code);
+
 
 #endif // PUSH_SWAP_H

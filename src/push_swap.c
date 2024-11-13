@@ -18,7 +18,6 @@
 
 void	ft_kill(t_slab **stack1, t_slab **stack2, int error_code)
 {
-	// Clear stacks 1 and 2
 	stack_clear(stack1);
 	stack_clear(stack2);
 	if (error_code != 0)
