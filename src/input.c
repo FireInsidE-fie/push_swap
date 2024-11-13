@@ -70,6 +70,11 @@ void	check_chars(int argc, char **argv)
  * containing multiple (think the input for the program could be
  * `./push_swap 1 2 "3" "4 5"` and so forth).
  *
+ * @note Malloc checks for slab_new() are performed by slab_add_back() ; to be
+ * extremely clear : I hate this with all of my heart, but this is the best way
+ * I found to do things and not pass over the 25 lines limit. Sorry future me,
+ * hopefully you'll be able to find a better solution.
+ *
  * @param argc The number of elements in argv.
  * @param argv The input from the program taken directly from the main() func.
  * @return A t_slab chained list with each element representing an integer.
