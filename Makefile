@@ -12,6 +12,7 @@ CFILES		=	$(SRCDIR)push_swap.c\
 				$(SRCDIR)slab.c \
 				$(SRCDIR)utils.c \
 				$(SRCDIR)input.c \
+				$(SRCDIR)sort_utils.c \
 				$(SRCDIR)dirty.c
 OBJS		=	$(CFILES:.c=.o)
 INCLDIR		=	include/
