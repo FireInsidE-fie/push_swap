@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:46:51 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/14 12:55:29 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/14 17:10:56 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@ void	ft_rr(t_slab **stack1, t_slab **stack2);
 void	ft_rra(t_slab **stack1, t_slab **stack2);
 void	ft_rrb(t_slab **stack1, t_slab **stack2);
 void	ft_rrr(t_slab **stack1, t_slab **stack2);
+
+// Algorithm functions
+void	ft_dirty(t_slab **stack1, t_slab **stack2);
 
 // Input parsing function prototypes
 t_slab	**parse_input(int argc, char **argv);
