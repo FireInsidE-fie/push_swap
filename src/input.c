@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:10:52 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/14 10:40:22 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/14 12:39:22 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,24 @@ void	check_chars(int argc, char **argv)
 		if (is_empty || invalid_char)
 			ft_kill(NULL, NULL, -1);
 		i++;
+	}
+}
+
+/**
+ * @brief Checks a stack for duplicate values or values bigger/smaller than
+ * integers on the current system.
+ *
+ * @param lst The chained list containing the ints to check.
+ */
+void	check_ints(t_slab **lst)
+{
+	t_slab	*slab;
+
+	slab = *lst;
+	while (slab->next)
+	{
+		if (slab->number > INT_MAX || slab->number < INT_MIN)
+			ft_kill(lst, NULL, -1);
 	}
 }
 
