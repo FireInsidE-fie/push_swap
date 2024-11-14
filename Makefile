@@ -10,6 +10,7 @@ CFILES		=	$(SRCDIR)push_swap.c\
 				$(SRCDIR)swap.c \
 				$(SRCDIR)r_rotate.c \
 				$(SRCDIR)slab.c \
+				$(SRCDIR)utils.c \
 				$(SRCDIR)input.c
 OBJS		=	$(CFILES:.c=.o)
 INCLDIR		=	include/
@@ -21,10 +22,10 @@ all:			$(NAME)
 
 
 $(NAME):		$(OBJS) $(LIBFT)
-				$(CC) $(CFLAGS) $^ -fsanitize=address -o $@
+				$(CC) $(CFLAGS) $^ -o $@
 
 %.o:			%.c
-				$(CC) $(CFLAGS) -g -fsanitize=address -c $^ -o $@
+				$(CC) $(CFLAGS) -g -c $^ -o $@
 
 $(LIBFT):	 	$(LIBFTDIR)/*.c
 				cd $(LIBFTDIR) && make

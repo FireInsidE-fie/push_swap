@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:46:51 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/12 17:46:09 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/14 10:40:43 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 // Libraries
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdint.h>
 
 // Linked list element definition
 typedef struct s_slab
@@ -49,6 +50,7 @@ void	stack_clear(t_slab **lst);
 
 // Util functions
 void	ft_kill(t_slab **stack1, t_slab **stack2, int error_code);
+int64_t	ft_atol(const char *str);
 
 
 #endif // PUSH_SWAP_H
