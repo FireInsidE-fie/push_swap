@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 12:46:30 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/13 15:10:01 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/14 10:58:07 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  * @param nb The integer that the slab will represent.
  * @return The newly allocated t_slab.
  */
-t_slab	*slab_new(int nb)
+t_slab	*slab_new(int64_t nb)
 {
 	t_slab	*new_slab;
 
