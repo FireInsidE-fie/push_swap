@@ -11,7 +11,8 @@ CFILES		=	$(SRCDIR)push_swap.c\
 				$(SRCDIR)r_rotate.c \
 				$(SRCDIR)slab.c \
 				$(SRCDIR)utils.c \
-				$(SRCDIR)input.c
+				$(SRCDIR)input.c \
+				$(SRCDIR)dirty.c
 OBJS		=	$(CFILES:.c=.o)
 INCLDIR		=	include/
 IFILES		=	push_swap.h
