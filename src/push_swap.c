@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:49:24 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/12 18:08:21 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/14 12:57:30 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	print_stack(t_slab **list)
 	slab = *list;
 	while (slab)
 	{
-		printf("%i\n", slab->number);
+		printf("%ld\n", slab->number);
 		slab = slab->next;
 	}
 	printf("---\n"); // DON'T FORGET TO REPLACE WITH FT_PRINTF

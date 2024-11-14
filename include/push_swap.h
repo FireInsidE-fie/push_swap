@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:46:51 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/14 12:35:27 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/14 12:55:29 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 // Linked list element definition
 typedef struct s_slab
 {
-	int				number;
+	int64_t			number;
 	struct s_slab	*next;
 }	t_slab;
 
