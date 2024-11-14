@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:10:52 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/14 13:17:02 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/14 13:32:12 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	check_chars(int argc, char **argv)
 	int	j;
 	int	is_empty;
 	int	invalid_char;
-	
+
 	i = 1;
 	is_empty = 0;
 	invalid_char = 0;
@@ -65,23 +65,30 @@ void	check_chars(int argc, char **argv)
  * @brief Checks a stack for duplicate values or values bigger than
  * integers on the current system.
  *
+ * @details The function will first check for values higher than INT_MAX or
+ * lower than INT_MIN, then proceed to check every value after it for
+ * duplicates.
+ * If either of those conditions are true, it will ft_kill the program.
+ *
  * @param lst The chained list containing the ints to check.
  */
 void	check_ints(t_slab **lst)
 {
 	t_slab	*slab;
+	t_slab	*tmp;
 
-	/* Checking for dupes :
-	 * Creating an array and putting every int inside, then working inside of
-	 * that array to check for duplicates (means I have to implement an index
-	 * inside my slab struct)
-	 * Check for dupes directly inside the chained list : how?
-	*/
 	slab = *lst;
 	while (slab)
 	{
 		if (slab->number > INT_MAX || slab->number < INT_MIN)
 			ft_kill(lst, NULL, -1);
+		tmp = slab->next;
+		while (tmp)
+		{
+			if (tmp->number == slab->number)
+				ft_kill(lst, NULL, -1);
+			tmp = tmp->next;
+		}
 		slab = slab->next;
 	}
 }
