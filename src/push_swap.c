@@ -37,6 +37,12 @@ void	ft_kill(t_slab **stack1, t_slab **stack2, int error_code)
 	exit(error_code);
 }
 
+/**
+ * @brief Prints a given stack from top to bottom to stdout, followed by three
+ * dashes.
+ *
+ * @param list A pointer to the first element of the stack.
+ */
 void	print_stack(t_slab **list)
 {
 	t_slab	*slab;
