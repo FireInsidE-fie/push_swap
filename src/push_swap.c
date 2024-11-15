@@ -16,6 +16,18 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+/**
+ * @brief Kills the program while freeing stacks' memory and displays
+ * an error message if applicable.
+ *
+ * @note Note that both stacks can be NULL in case the program needs to close
+ * but hasn't initialized its stacks just yet.
+ *
+ * @param stack1 The first stack to clear.
+ * @param stack2 The second stack to clear.
+ * @param error_code An error code to pass as argument to the exit() function.
+ * If error_code == 0, the program will exit without printing "Error\n".
+ */
 void	ft_kill(t_slab **stack1, t_slab **stack2, int error_code)
 {
 	stack_clear(stack1);
@@ -34,7 +46,7 @@ void	print_stack(t_slab **list)
 	slab = *list;
 	while (slab)
 	{
-		printf("%ld\n", slab->number);
+		printf("%lld\n", slab->number);
 		slab = slab->next;
 	}
 	printf("---\n"); // DON'T FORGET TO REPLACE WITH FT_PRINTF
@@ -47,22 +59,17 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		return (-1);
-	// Check if input is good (only ints, no bigger no smaller, no dupes)
 	stack1 = parse_input(argc, argv);
-	stack2 = 0;
+	stack2 = malloc(sizeof(t_slab*));
+	if (!stack2)
+		ft_kill(stack1, NULL, -1);
+	ft_pb(stack1, stack2);
 	print_stack(stack1);
-	ft_sa(stack1, stack2);
+	print_stack(stack2);
+	/*
 	print_stack(stack1);
-	ft_sa(stack1, stack2);
+	ft_dirty(stack1, stack2);
 	print_stack(stack1);
-	ft_rra(stack1, stack2);
-	print_stack(stack1);
-	ft_rra(stack1, stack2);
-	print_stack(stack1);
-	ft_rra(stack1, stack2);
-	ft_rra(stack1, stack2);
-	ft_rra(stack1, stack2);
-	print_stack(stack1);
-
+	*/
 	ft_kill(stack1, stack2, 0);
 }
