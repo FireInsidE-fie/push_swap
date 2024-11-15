@@ -14,22 +14,28 @@
 
 void	ft_pa(t_slab **stack1, t_slab **stack2)
 {
-	t_slab	**tmp;
+	t_slab	*pushed;
+	t_slab	*tmp;
 
 	if (!stack2 || !(*stack2))
 		return ;
-	tmp = &((*stack2)->next);
-	(*stack2)->next = *stack1;
-	stack2 = tmp;
+	pushed = *stack2;
+	tmp = ((*stack2)->next);
+	pushed->next = *stack1;
+	*stack1 = pushed;
+	*stack2 = tmp;
 }
 
 void	ft_pb(t_slab **stack1, t_slab **stack2)
 {
-	t_slab	**tmp;
+	t_slab	*pushed;
+	t_slab	*tmp;
 
 	if (!stack1 || !(*stack1))
 		return ;
-	tmp = &((*stack1)->next);
-	(*stack1)->next = *stack2;
-	stack1 = tmp;
+	pushed = *stack1;
+	tmp = ((*stack1)->next);
+	pushed->next = *stack2;
+	*stack2 = pushed;
+	*stack1 = tmp;
 }
