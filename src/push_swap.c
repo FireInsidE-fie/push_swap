@@ -63,13 +63,8 @@ int	main(int argc, char **argv)
 	stack2 = malloc(sizeof(t_slab*));
 	if (!stack2)
 		ft_kill(stack1, NULL, -1);
-	ft_pb(stack1, stack2);
-	print_stack(stack1);
-	print_stack(stack2);
-	/*
 	print_stack(stack1);
 	ft_dirty(stack1, stack2);
 	print_stack(stack1);
-	*/
 	ft_kill(stack1, stack2, 0);
 }
