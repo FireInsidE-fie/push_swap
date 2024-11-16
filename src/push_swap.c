@@ -6,13 +6,12 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:49:24 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/15 12:47:57 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/16 17:10:22 by fireinsid        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 
@@ -25,7 +24,7 @@
  *
  * @param stack1 The first stack to clear.
  * @param stack2 The second stack to clear.
- * @param error_code An error code to pass as argument to the exit() function.
+ * @param error_code The exit status code to pass to the exit() function.
  * If error_code == 0, the program will exit without printing "Error\n".
  */
 void	ft_kill(t_slab **stack1, t_slab **stack2, int error_code)
@@ -52,10 +51,10 @@ void	print_stack(t_slab **list)
 	slab = *list;
 	while (slab)
 	{
-		printf("%ld\n", slab->number);
+		ft_printf("%d\n", (int)slab->number);
 		slab = slab->next;
 	}
-	printf("---\n"); // DON'T FORGET TO REPLACE WITH FT_PRINTF
+	ft_printf("---\n");
 }
 
 int	main(int argc, char **argv)
@@ -66,7 +65,7 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (-1);
 	stack1 = parse_input(argc, argv);
-	stack2 = malloc(sizeof(t_slab*));
+	stack2 = malloc(sizeof(t_slab *));
 	if (!stack2)
 		ft_kill(stack1, NULL, -1);
 	print_stack(stack1);

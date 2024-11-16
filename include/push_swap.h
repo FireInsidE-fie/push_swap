@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:46:51 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/15 13:13:07 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/16 17:06:18 by fireinsid        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include <stdlib.h>
 # include <stdint.h>
 # include <limits.h>
+
+// Libft and printf
+# include "../libftprintf/ft_printf.h"
 
 // Linked list element definition
 typedef struct s_slab

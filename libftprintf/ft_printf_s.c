@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_utils.c                                       :+:      :+:    :+:   */
+/*   ft_printf_s.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 16:21:23 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/16 17:07:03 by fireinsid        ###   ########.fr       */
+/*   Created: 2024/10/25 13:51:18 by estettle          #+#    #+#             */
+/*   Updated: 2024/10/27 21:06:29 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "ft_printf.h"
+#include "libft/libft.h"
 
 /**
- * @brief Checks a stack and returns 1 if it is sorted in ascending order.
+ * @brief Prints a string to stdout, counting the number of bytes written.
  *
- * @return 1 if sorted correctly, 0 otherwise.
-*/
-short	is_sorted(t_slab *lst)
+ * @param str The string to process.
+ * @param count A pointer to the number of bytes written by ft_printf() so far.
+ */
+void	process_str(char *str, int *count)
 {
-	while (lst && lst->next)
+	if (!str)
 	{
-		if (lst->number < (lst->next)->number)
-			return (0);
-		lst = lst->next;
+		ft_putstr_fd("(null)", 1);
+		*count += 6;
+		return ;
 	}
-	return (1);
+	ft_putstr_fd(str, 1);
+	*count += ft_strlen(str);
 }

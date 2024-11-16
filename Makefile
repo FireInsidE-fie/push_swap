@@ -17,8 +17,8 @@ CFILES		=	$(SRCDIR)push_swap.c\
 OBJS		=	$(CFILES:.c=.o)
 INCLDIR		=	include/
 IFILES		=	push_swap.h
-LIBFTDIR	=	libft/
-LIBFT		=	$(LIBFTDIR)libft.a
+LIBFTDIR	=	libftprintf/
+LIBFT		=	$(LIBFTDIR)libftprintf.a
 
 all:			$(NAME)
 
