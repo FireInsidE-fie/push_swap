@@ -18,18 +18,26 @@ void	ft_dirty(t_slab **stack1, t_slab **stack2)
 	while (*stack1)
 	{
 		if (!(*stack2) || (*stack1)->number > (*stack2)->number)
+		{
+			ft_printf("pb\n");
 			ft_pb(stack1, stack2);
+		}
 		else
 		{
+			ft_printf("pa\nsa\n");
 			ft_pa(stack1, stack2);
 			ft_sa(stack1, stack2);
 			while (*stack2 && (*stack1)->number < (*stack2)->number)
 			{
+				ft_printf("pa\nsa\n");
 				ft_pa(stack1, stack2);
 				ft_sa(stack1, stack2);
 			}
 		}
 	}
 	while (*stack2)
+	{
+		ft_printf("pa\n");
 		ft_pa(stack1, stack2);
+	}
 }
