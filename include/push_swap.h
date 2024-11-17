@@ -26,6 +26,7 @@
 typedef struct s_slab
 {
 	int64_t			number;
+	uint16_t		index;
 	struct s_slab	*next;
 }	t_slab;
 
