@@ -26,6 +26,7 @@ t_slab	*slab_new(int64_t nb)
 	if (!new_slab)
 		return (NULL);
 	new_slab->number = nb;
+	new_slab->index = 0;
 	new_slab->next = NULL;
 	return (new_slab);
 }
