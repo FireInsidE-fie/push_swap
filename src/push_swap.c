@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:49:24 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/16 17:10:22 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/18 13:08:57 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,9 @@ int	main(int argc, char **argv)
 	nb_count = slab_count(*stack1);
 	if (!stack2)
 		ft_kill(stack1, NULL, -1);
-	if (nb_count < 3)
+	if (nb_count == 2)
+		ft_alis(stack1, stack2);
+	else
 		ft_dirty(stack1, stack2);
 	// Add condition for 3 number, 4 number and a last for everything above
 	print_stack(stack1);
