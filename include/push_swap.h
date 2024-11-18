@@ -22,6 +22,10 @@
 // Libft and printf
 # include "../libftprintf/ft_printf.h"
 
+// Macros
+# define TRUE 1
+# define FALSE 0
+
 // Linked list element definition
 typedef struct s_slab
 {
@@ -55,6 +59,7 @@ t_slab	*slab_last(t_slab *lst);
 void	slab_add_back(t_slab **lst, t_slab *new);
 void	slab_add_front(t_slab **lst, t_slab *new);
 void	stack_clear(t_slab **lst);
+int16_t	slab_count(t_slab *lst);
 
 // Util functions
 void	ft_kill(t_slab **stack1, t_slab **stack2, int error_code);

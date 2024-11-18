@@ -12,18 +12,32 @@
 
 #include "../include/push_swap.h"
 
+int16_t	slab_count(t_slab *lst)
+{
+	int16_t	slab_count;
+	
+	slab_count = 0;
+	while (lst)
+	{
+		slab_count++;
+		lst = lst->next;
+	}
+	return (slab_count);
+}
+
 /**
- * @brief Checks a stack and returns 1 if it is sorted in ascending order.
+ * @brief Checks if a stack is sorted in ascending order, the lowest number
+ * at the top.
  *
- * @return 1 if sorted correctly, 0 otherwise.
+ * @return TRUE if sorted correctly, FALSE otherwise.
 */
-short	is_sorted(t_slab *lst)
+int8_t	is_sorted(t_slab *lst)
 {
 	while (lst && lst->next)
 	{
 		if (lst->number < (lst->next)->number)
-			return (0);
+			return (FALSE);
 		lst = lst->next;
 	}
-	return (1);
+	return (TRUE);
 }

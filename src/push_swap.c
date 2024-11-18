@@ -59,6 +59,7 @@ void	print_stack(t_slab **list)
 
 int	main(int argc, char **argv)
 {
+	int16_t	nb_count;
 	t_slab	**stack1;
 	t_slab	**stack2;
 
@@ -66,10 +67,12 @@ int	main(int argc, char **argv)
 		return (-1);
 	stack1 = parse_input(argc, argv);
 	stack2 = malloc(sizeof(t_slab *));
+	nb_count = slab_count(*stack1);
 	if (!stack2)
 		ft_kill(stack1, NULL, -1);
-	print_stack(stack1);
-	ft_dirty(stack1, stack2);
+	if (nb_count < 3)
+		ft_dirty(stack1, stack2);
+	// Add condition for 3 number, 4 number and a last for everything above
 	print_stack(stack1);
 	ft_kill(stack1, stack2, 0);
 }
