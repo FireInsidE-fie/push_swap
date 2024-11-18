@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:46:51 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/16 17:06:18 by fireinsid        ###   ########.fr       */
+/*   Updated: 2024/11/18 13:06:59 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ int16_t	slab_count(t_slab *lst);
 // Util functions
 void	ft_kill(t_slab **stack1, t_slab **stack2, int error_code);
 void	print_stack(t_slab **list);
+int8_t	is_sorted(t_slab *lst);
 int64_t	ft_atol(const char *str);
 
 #endif // PUSH_SWAP_H
