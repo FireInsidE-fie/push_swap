@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:21:23 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/16 17:07:03 by fireinsid        ###   ########.fr       */
+/*   Updated: 2024/11/18 18:49:14 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int8_t	is_sorted(t_slab *lst)
 {
 	while (lst && lst->next)
 	{
-		if (lst->number < (lst->next)->number)
+		if (lst->number > (lst->next)->number)
 			return (FALSE);
 		lst = lst->next;
 	}
