@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:10:52 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/19 12:32:37 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/19 12:40:30 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,7 @@ t_slab	**parse_input(int argc, char **argv)
 	*integers = NULL;
 	while (i < argc)
 	{
+		// Indexing is only debug for now, need to index in sorted order already
 		slab_add_back(integers, slab_new(ft_atol(argv[i]), i));
 		while (*argv[i])
 		{

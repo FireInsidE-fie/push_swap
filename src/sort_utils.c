@@ -6,15 +6,15 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:21:23 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/18 18:49:14 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/19 12:49:02 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int16_t	slab_count(t_slab *lst)
+uint8_t	slab_count(t_slab *lst)
 {
-	int16_t	slab_count;
+	uint8_t	slab_count;
 	
 	slab_count = 0;
 	while (lst)
