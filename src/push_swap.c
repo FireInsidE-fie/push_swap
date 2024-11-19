@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:49:24 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/19 13:12:30 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/19 16:05:30 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int	main(int argc, char **argv)
 	else if (nb_count == 3)
 		ft_roxy(stack1, stack2);
 	else
-		ft_dirty(stack1, stack2);
+		ft_radix(stack1, stack2);
 	// Add condition for 4 number, 5 and a last one for everything above that
 	print_stack(stack1); // debug
 	ft_kill(stack1, stack2, 0);

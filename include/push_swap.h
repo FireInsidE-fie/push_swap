@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:46:51 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/19 13:12:55 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/19 16:10:28 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void		ft_rrr(t_slab **stack1, t_slab **stack2);
 void		ft_dirty(t_slab **stack1, t_slab **stack2);
 void		ft_alis(t_slab **stack1, t_slab **stack2);
 void		ft_roxy(t_slab **stack1, t_slab **stack2);
+void		ft_radix(t_slab **stack1, t_slab **stack2);
 
 // Input parsing function prototypes
 t_slab		**parse_input(int argc, char **argv);
@@ -61,7 +62,7 @@ t_slab		*slab_last(t_slab *lst);
 void		slab_add_back(t_slab **lst, t_slab *new);
 void		slab_add_front(t_slab **lst, t_slab *new);
 void		stack_clear(t_slab **lst);
-uint8_t		slab_count(t_slab *lst);
+uint16_t	slab_count(t_slab *lst);
 
 // Util functions
 void		ft_kill(t_slab **stack1, t_slab **stack2, int error_code);

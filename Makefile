@@ -14,7 +14,8 @@ CFILES		=	$(SRCDIR)push_swap.c\
 				$(SRCDIR)input.c \
 				$(SRCDIR)sort_utils.c \
 				$(SRCDIR)dirty.c \
-				$(SRCDIR)melodies.c
+				$(SRCDIR)melodies.c \
+				$(SRCDIR)radix.c
 OBJS		=	$(CFILES:.c=.o)
 INCLDIR		=	include/
 IFILES		=	push_swap.h
