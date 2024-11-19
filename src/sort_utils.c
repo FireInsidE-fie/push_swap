@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:21:23 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/19 12:49:02 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/19 13:18:28 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,46 @@ int8_t	is_sorted(t_slab *lst)
 		lst = lst->next;
 	}
 	return (TRUE);
+}
+
+/**
+ * @brief Looks through a list and returns a pointer to the list element that 
+ * has the lowest number amongst the elements that don't have an index yet.
+ *
+ * @param lst A pointer to the first element of the list to look through.
+ */
+t_slab	*get_min_unindexed(t_slab *lst)
+{
+	t_slab	*slab;
+
+	if (!lst)
+		return NULL;
+	slab = NULL;
+	while (!slab && lst)
+	{
+		if (!lst->index)
+			slab = lst;
+		lst = lst->next;
+	}
+	while (lst)
+	{
+		if (!lst->index && lst->number < slab->number) 
+			slab = lst;
+		lst = lst->next;
+	}
+	return (slab);
+}
+
+void	index_stack(t_slab *lst)
+{
+	t_slab		*slab;
+	uint16_t	i;
+
+	slab = get_min_unindexed(lst);
+	i = 0;
+	while (slab)
+	{
+		slab->index = i++;
+		slab = get_min_unindexed(lst);
+	}
 }

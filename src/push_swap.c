@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:49:24 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/19 12:37:54 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/19 13:12:30 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ int	main(int argc, char **argv)
 	stack1 = parse_input(argc, argv);
 	stack2 = malloc(sizeof(t_slab *));
 	nb_count = slab_count(*stack1);
+	index_stack(*stack1);
 	if (!stack2)
 		ft_kill(stack1, NULL, -1);
 	if (nb_count == 2)
