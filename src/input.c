@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:10:52 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/19 13:20:52 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/19 17:43:44 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ void	check_ints(t_slab **lst)
  */
 t_slab	**parse_input(int argc, char **argv)
 {
-	int16_t		i;
+	int32_t		i;
 	t_slab		**integers;
 
 	i = 1;

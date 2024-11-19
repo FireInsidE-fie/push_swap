@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:49:24 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/19 16:05:30 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/19 17:43:35 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	print_stack(t_slab **list)
 
 int	main(int argc, char **argv)
 {
-	int16_t	nb_count;
+	int32_t	nb_count;
 	t_slab	**stack1;
 	t_slab	**stack2;
 

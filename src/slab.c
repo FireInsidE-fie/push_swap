@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 12:46:30 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/19 12:31:36 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/19 17:44:01 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * @param index The index of the nb argument in argv.
  * @return The newly allocated t_slab.
  */
-t_slab	*slab_new(int64_t nb, int16_t index)
+t_slab	*slab_new(int64_t nb, int32_t index)
 {
 	t_slab	*new_slab;
 

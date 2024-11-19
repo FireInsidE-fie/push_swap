@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:46:51 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/19 17:39:51 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/19 17:44:08 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 typedef struct s_slab
 {
 	int64_t			number;
-	uint16_t		index;
+	int32_t			index;
 	struct s_slab	*next;
 }	t_slab;
 
@@ -57,7 +57,7 @@ void		ft_radix(t_slab **stack1, t_slab **stack2);
 t_slab		**parse_input(int argc, char **argv);
 
 // Chained lists management function prototypes
-t_slab		*slab_new(int64_t nb, int16_t index);
+t_slab		*slab_new(int64_t nb, int32_t index);
 t_slab		*slab_last(t_slab *lst);
 void		slab_add_back(t_slab **lst, t_slab *new);
 void		slab_add_front(t_slab **lst, t_slab *new);

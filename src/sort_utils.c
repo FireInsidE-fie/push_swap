@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:21:23 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/19 17:39:40 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/19 17:43:24 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ t_slab	*get_min_unindexed(t_slab *lst)
 void	index_stack(t_slab *lst)
 {
 	t_slab		*slab;
-	uint16_t	i;
+	int32_t	i;
 
 	slab = get_min_unindexed(lst);
 	i = 0;
