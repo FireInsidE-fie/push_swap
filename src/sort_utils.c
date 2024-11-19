@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:21:23 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/19 13:18:28 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/19 13:21:38 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 uint8_t	slab_count(t_slab *lst)
 {
 	uint8_t	slab_count;
-	
+
 	slab_count = 0;
 	while (lst)
 	{
@@ -53,7 +53,7 @@ t_slab	*get_min_unindexed(t_slab *lst)
 	t_slab	*slab;
 
 	if (!lst)
-		return NULL;
+		return (NULL);
 	slab = NULL;
 	while (!slab && lst)
 	{
@@ -63,7 +63,7 @@ t_slab	*get_min_unindexed(t_slab *lst)
 	}
 	while (lst)
 	{
-		if (!lst->index && lst->number < slab->number) 
+		if (!lst->index && lst->number < slab->number)
 			slab = lst;
 		lst = lst->next;
 	}
