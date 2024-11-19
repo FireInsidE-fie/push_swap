@@ -67,6 +67,8 @@ int	main(int argc, char **argv)
 		return (-1);
 	stack1 = parse_input(argc, argv);
 	stack2 = malloc(sizeof(t_slab *));
+	if (is_sorted(*stack1))
+		return 0;
 	nb_count = slab_count(*stack1);
 	index_stack(*stack1);
 	if (!stack2)
