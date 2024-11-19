@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:46:51 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/18 18:46:43 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/19 12:31:33 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	ft_roxy(t_slab **stack1, t_slab **stack2);
 t_slab	**parse_input(int argc, char **argv);
 
 // Chained lists management function prototypes
-t_slab	*slab_new(int64_t nb);
+t_slab	*slab_new(int64_t nb, int16_t index);
 t_slab	*slab_last(t_slab *lst);
 void	slab_add_back(t_slab **lst, t_slab *new);
 void	slab_add_front(t_slab **lst, t_slab *new);

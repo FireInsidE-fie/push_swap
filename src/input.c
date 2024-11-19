@@ -6,12 +6,11 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:10:52 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/14 13:32:12 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/19 12:32:37 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-#include <stdint.h>
 
 // Function to check for dupes
 //
@@ -111,8 +110,8 @@ void	check_ints(t_slab **lst)
  */
 t_slab	**parse_input(int argc, char **argv)
 {
-	int		i;
-	t_slab	**integers;
+	int16_t		i;
+	t_slab		**integers;
 
 	i = 1;
 	check_chars(argc, argv);
@@ -122,11 +121,11 @@ t_slab	**parse_input(int argc, char **argv)
 	*integers = NULL;
 	while (i < argc)
 	{
-		slab_add_back(integers, slab_new(ft_atol(argv[i])));
+		slab_add_back(integers, slab_new(ft_atol(argv[i]), i));
 		while (*argv[i])
 		{
 			if (*argv[i] == ' ')
-				slab_add_back(integers, slab_new(ft_atol(++argv[i])));
+				slab_add_back(integers, slab_new(ft_atol(++argv[i]), i));
 			argv[i]++;
 		}
 		i++;

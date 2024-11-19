@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 12:46:30 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/14 13:32:59 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/19 12:31:36 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@
  * @brief Allocates and returns a new t_slab element.
  *
  * @param nb The integer that the slab will represent.
+ * @param index The index of the nb argument in argv.
  * @return The newly allocated t_slab.
  */
-t_slab	*slab_new(int64_t nb)
+t_slab	*slab_new(int64_t nb, int16_t index)
 {
 	t_slab	*new_slab;
 
@@ -26,7 +27,7 @@ t_slab	*slab_new(int64_t nb)
 	if (!new_slab)
 		return (NULL);
 	new_slab->number = nb;
-	new_slab->index = 0;
+	new_slab->index = index;
 	new_slab->next = NULL;
 	return (new_slab);
 }
