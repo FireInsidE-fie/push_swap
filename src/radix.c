@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 14:59:23 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/19 16:17:24 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/19 17:40:10 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_radix(t_slab **stack1, t_slab **stack2)
 {
-	uint16_t	size;
-	uint16_t	max_num;
-	uint16_t	max_bits;
-	uint16_t	i;
+	int32_t	size;
+	int32_t	max_num;
+	int32_t	max_bits;
+	int32_t	i;
 
 	size = slab_count(*stack1);
 	max_num = size - 1;
@@ -27,9 +27,9 @@ void	ft_radix(t_slab **stack1, t_slab **stack2)
 		max_bits++;
 	while (++i < max_bits)
 	{
-		while (size--)
+		while (--size > 0)
 		{
-			if ((((*stack1)->number >> i)&1) == 1)
+			if ((((*stack1)->index >> i)&1) == 1)
 			{
 				ft_printf("ra\n");
 				ft_ra(stack1, stack2);
