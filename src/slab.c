@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 12:46:30 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/20 11:53:16 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/20 13:56:52 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,6 @@ void	stack_clear(t_slab **lst)
 		free(*lst);
 		*lst = next_slab;
 	}
+	*lst = NULL;
 	free(lst);
-	lst = NULL;
 }
