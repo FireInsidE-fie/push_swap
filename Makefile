@@ -45,4 +45,7 @@ fclean:			clean
 re:				fclean all
 
 
+debug:			$(OBJS) $(LIBFT)
+				$(CC) $(CFLAGS) $^ -fsanitize=address -o $@
+
 .PHONY:			all clean fclean re
