@@ -6,12 +6,13 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:49:24 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/19 17:43:35 by estettle         ###   ########.fr       */
+/*   Updated: 2024/11/21 13:25:57 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 
@@ -36,6 +37,18 @@ void	ft_kill(t_slab **stack1, t_slab **stack2, int error_code)
 	exit(error_code);
 }
 
+void	ft_bin(int n)
+{
+	// Function to be removed once radix works well, this is only to help
+	// visualizing with print_stack
+	/* step 1 */
+	if (n > 1)
+		ft_bin(n / 2);
+
+	/* step 2 */
+	ft_printf("%d", n % 2);
+}
+
 /**
  * @brief Prints a given stack from top to bottom to stdout, followed by three
  * dashes.
@@ -51,7 +64,8 @@ void	print_stack(t_slab **list)
 	slab = *list;
 	while (slab)
 	{
-		ft_printf("%d : %d\n", slab->index, slab->number);
+		ft_bin(slab->index);
+		ft_printf(" : %d\n", slab->number);
 		slab = slab->next;
 	}
 	ft_printf("---\n");
