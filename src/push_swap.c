@@ -37,18 +37,6 @@ void	ft_kill(t_slab **stack1, t_slab **stack2, int error_code)
 	exit(error_code);
 }
 
-void	ft_bin(int n)
-{
-	// Function to be removed once radix works well, this is only to help
-	// visualizing with print_stack
-	/* step 1 */
-	if (n > 1)
-		ft_bin(n / 2);
-
-	/* step 2 */
-	ft_printf("%d", n % 2);
-}
-
 /**
  * @brief Prints a given stack from top to bottom to stdout, followed by three
  * dashes.
@@ -64,8 +52,7 @@ void	print_stack(t_slab **list)
 	slab = *list;
 	while (slab)
 	{
-		ft_bin(slab->index);
-		ft_printf(" : %d\n", slab->number);
+		ft_printf("%d : %d\n", slab->index, slab->number);
 		slab = slab->next;
 	}
 	ft_printf("---\n");
