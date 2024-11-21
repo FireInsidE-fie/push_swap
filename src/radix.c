@@ -21,7 +21,7 @@ void	ft_radix(t_slab **stack1, t_slab **stack2)
 	int32_t	j;
 
 	size = slab_count(*stack1);
-	max_num = size - 1;
+	max_num = size;
 	max_bits = 0;
 	i = -1;
 	while (max_num >> max_bits)
