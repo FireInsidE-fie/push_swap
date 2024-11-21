@@ -73,7 +73,7 @@ t_slab	*get_min_unindexed(t_slab *lst)
 void	index_stack(t_slab *lst)
 {
 	t_slab		*slab;
-	int32_t	i;
+	int32_t		i;
 
 	slab = get_min_unindexed(lst);
 	i = 0;
