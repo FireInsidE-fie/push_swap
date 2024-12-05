@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:49:24 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/21 19:19:46 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/02 12:50:53 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,13 +74,14 @@ int	main(int argc, char **argv)
 	index_stack(*stack1);
 	if (!stack2)
 		ft_kill(stack1, NULL, -1);
+	*stack2 = NULL;
 	if (nb_count == 2)
 		ft_alis(stack1, stack2);
 	else if (nb_count == 3)
 		ft_roxy(stack1, stack2);
 	else
 		ft_radix(stack1, stack2);
-	// Add condition for 4 number, 5 and a last one for everything above that
-	print_stack(stack1); // debug
+	// Add condition for 4 numbers and 5 numbers (especially 5)
+	// print_stack(stack1); // debug
 	ft_kill(stack1, stack2, 0);
 }
