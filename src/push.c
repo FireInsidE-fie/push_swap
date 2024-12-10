@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 12:33:02 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/06 13:13:02 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/10 10:20:27 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	ft_pa(t_slab **stack1, t_slab **stack2)
 
 	if (!stack2 || !(*stack2))
 		return ;
+	ft_printf("pa\n");
 	pushed = *stack2;
 	tmp = ((*stack2)->next);
 	pushed->next = *stack1;
@@ -33,6 +34,7 @@ void	ft_pb(t_slab **stack1, t_slab **stack2)
 
 	if (!stack1 || !(*stack1))
 		return ;
+	ft_printf("pb\n");
 	pushed = *stack1;
 	tmp = ((*stack1)->next);
 	pushed->next = *stack2;
