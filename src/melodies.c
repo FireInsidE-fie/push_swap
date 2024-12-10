@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:03:18 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/10 16:00:24 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/10 17:03:14 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,12 @@ void	ft_ash(t_slab **stack1, t_slab **stack2)
 		ft_pa(stack1, stack2);
 		ft_ra(stack1, stack2, 0);
 	}
-	// Put the element in stack2 back in stack1 at the right position
+	else
+	{
+		while ((*stack1)->number < (*stack2)->number)
+			ft_ra(stack1, stack2, 0);
+		ft_pa(stack1, stack2);
+		while (!is_sorted(*stack1))
+			ft_rra(stack1, stack2, 0);
+	}
 }
