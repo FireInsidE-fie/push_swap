@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:46:51 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/10 17:50:17 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/11 12:37:12 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # define TRUE 1
 # define FALSE 0
 
-// Linked list element definition
+// Linked list element
 typedef struct s_slab
 {
 	int64_t			number;
@@ -34,7 +34,7 @@ typedef struct s_slab
 	struct s_slab	*next;
 }	t_slab;
 
-// Operation function prototypes
+// Operation functions
 void		ft_sa(t_slab **stack1, t_slab **stack2, int silenced);
 void		ft_sb(t_slab **stack1, t_slab **stack2, int silenced);
 void		ft_ss(t_slab **stack1, t_slab **stack2);
@@ -55,10 +55,10 @@ void		ft_ash(t_slab **stack1, t_slab **stack2);
 void		ft_melody(t_slab **stack1, t_slab **stack2);
 void		ft_radix(t_slab **stack1, t_slab **stack2);
 
-// Input parsing function prototypes
+// Input parsing functions
 t_slab		**parse_input(int argc, char **argv);
 
-// Chained lists management function prototypes
+// Chained lists management functions
 t_slab		*slab_new(int64_t nb, int32_t index);
 t_slab		*slab_last(t_slab *lst);
 void		slab_add_back(t_slab **lst, t_slab *new);
@@ -73,5 +73,6 @@ int8_t		is_sorted(t_slab *lst);
 t_slab		*get_min_unindexed(t_slab *lst);
 void		index_stack(t_slab *lst);
 int64_t		ft_atol(const char *str);
+void		push_back(t_slab **stack1, t_slab **stack2);
 
 #endif // PUSH_SWAP_H

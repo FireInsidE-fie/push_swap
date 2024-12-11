@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 14:59:23 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/10 10:28:48 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/11 13:26:19 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_radix(t_slab **stack1, t_slab **stack2)
 			if (!(*stack1))
 				break ;
 			if ((((*stack1)->index >> i) & 1) == 1)
-				ft_ra(stack1, stack2, 0);
+				ft_ra(stack1, stack2, FALSE);
 			else
 				ft_pb(stack1, stack2);
 		}
