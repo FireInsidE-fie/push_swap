@@ -13,7 +13,6 @@ CFILES		=	$(SRCDIR)push_swap.c\
 				$(SRCDIR)utils.c \
 				$(SRCDIR)input.c \
 				$(SRCDIR)sort_utils.c \
-				$(SRCDIR)dirty.c \
 				$(SRCDIR)melodies.c \
 				$(SRCDIR)radix.c
 OBJS		=	$(CFILES:.c=.o)
@@ -25,7 +24,7 @@ LIBFT		=	$(LIBFTDIR)libftprintf.a
 all:			$(NAME)
 
 
-$(NAME):		$(OBJS) $(LIBFT)
+$(NAME):		$(LIBFT) $(OBJS)
 				$(CC) $(CFLAGS) $^ -o $@
 
 %.o:			%.c
@@ -37,15 +36,10 @@ $(LIBFT):	 	$(LIBFTDIR)/*.c
 clean:
 				$(RM) $(RMFLAGS) $(OBJS)
 				cd $(LIBFTDIR) && make clean
-
 fclean:			clean
 				$(RM) $(RMFLAGS) $(NAME)
 				cd $(LIBFTDIR) && make fclean
-
 re:				fclean all
 
-
-debug:			$(OBJS) $(LIBFT)
-				$(CC) $(CFLAGS) $^ -fsanitize=address -o $@
 
 .PHONY:			all clean fclean re
