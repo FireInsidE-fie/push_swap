@@ -6,14 +6,14 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 10:16:48 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/14 12:56:41 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/11 12:05:16 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 /**
- * @brief Converts a string into its 64 bit integer representation.
+ * @brief Converts a number as a string into its 64 bit integer representation.
  * This function accepts any number of white space (isspace(3)) as a suffix,
  * as well as one minus (-) or plus (-) sign.
  *

@@ -6,17 +6,11 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:10:52 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/19 17:43:44 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/11 12:03:41 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-// Function to check for dupes
-//
-// Function to check for number size
-//
-// Driver function to check the input, calling the other three
 
 /**
  * @brief Checks all arguments inputted to the program for invalid characters.
