@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:03:18 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/10 17:51:22 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/11 11:28:57 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,35 @@ void	ft_ash(t_slab **stack1, t_slab **stack2)
 }
 
 /**
+ * @brief Helper function for the melody algorithm. Pushes back the two
+ * elements in stack2 in the stack1, at their sorted positions.
+ */
+static void	push_back(t_slab **stack1, t_slab **stack2)
+{
+	if ((*stack2)->number > (*stack1)->next->next->number)
+	{
+		ft_pa(stack1, stack2);
+		ft_ra(stack1, stack2, 0);
+		if ((*stack2)->number > (*stack1)->next->next->number)
+		{
+			ft_pa(stack1, stack2);
+			ft_ra(stack1, stack2, 0);
+		}
+	}
+	else // TODO : Push back the two numbers instead of just one like in ash()
+	{
+		while ((*stack1)->number < (*stack2)->number)
+			ft_ra(stack1, stack2, 0);
+		ft_pa(stack1, stack2);
+		while ((*stack1)->number < (*stack2)->number)
+			ft_ra(stack1, stack2, 0);
+		ft_pa(stack1, stack2);
+		while (!is_sorted(*stack1))
+			ft_ra(stack1, stack2, 0);
+	}
+}
+
+/**
  * @brief Algorithm function in case of five elements to sort.
  */
 void	ft_melody(t_slab **stack1, t_slab **stack2)
@@ -85,20 +114,5 @@ void	ft_melody(t_slab **stack1, t_slab **stack2)
 	ft_roxy(stack1, stack2);
 	if (!is_sorted(*stack2))
 		ft_sb(stack1, stack2, 0);
-	if ((*stack2)->number > (*stack1)->number
-		&& (*stack2)->number > (*stack1)->next->number
-		&& (*stack2)->number > (*stack1)->next->next->number
-		&& (*stack2)->number > (*stack1)->next->next->next->number)
-	{
-		ft_pa(stack1, stack2);
-		ft_ra(stack1, stack2, 0);
-	}
-	else // TODO : Push back the two numbers instead of just one like in ash()
-	{
-		while ((*stack1)->number < (*stack2)->number)
-			ft_ra(stack1, stack2, 0);
-		ft_pa(stack1, stack2);
-		while (!is_sorted(*stack1))
-			ft_rra(stack1, stack2, 0);
-	}
+	push_back(stack1, stack2);
 }

@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:49:24 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/10 17:02:17 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/11 11:24:13 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,8 @@ int	main(int argc, char **argv)
 		ft_roxy(stack1, stack2);
 	else if (nb_count == 4)
 		ft_ash(stack1, stack2);
+	else if (nb_count == 5)
+		ft_melody(stack1, stack2);
 	else
 		ft_radix(stack1, stack2);
 	// Add condition for 4 numbers and 5 numbers (especially 5)
