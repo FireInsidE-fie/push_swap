@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:49:24 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/11 11:24:13 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/13 15:11:50 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,8 @@ int	main(int argc, char **argv)
 	stack1 = parse_input(argc, argv);
 	stack2 = malloc(sizeof(t_slab *));
 	if (is_sorted(*stack1))
-		return (0);
+		ft_kill(stack1, stack2, 0);
 	nb_count = slab_count(*stack1);
-	index_stack(*stack1);
 	if (!stack2)
 		ft_kill(stack1, NULL, -1);
 	*stack2 = NULL;
@@ -85,7 +84,5 @@ int	main(int argc, char **argv)
 		ft_melody(stack1, stack2);
 	else
 		ft_radix(stack1, stack2);
-	// Add condition for 4 numbers and 5 numbers (especially 5)
-	// print_stack(stack1); // debug
 	ft_kill(stack1, stack2, 0);
 }

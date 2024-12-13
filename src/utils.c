@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 10:16:48 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/13 11:19:02 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/13 14:33:02 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int64_t	ft_atol(const char *str)
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 		if (str[i++] == '-')
-			sign = (int8_t)-sign;
+			sign = (int8_t)(-sign);
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		converted += str[i++] - '0';
