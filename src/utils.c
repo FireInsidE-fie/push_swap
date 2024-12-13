@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 10:16:48 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/11 12:47:03 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/13 11:19:02 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,27 @@ int64_t	ft_atol(const char *str)
 			converted *= 10;
 	}
 	return (converted * sign);
+}
+
+/**
+ * @brief This function goes through a slab stack and returns the highest number
+ * contained within the number values.
+ *
+ * @param stack A pointer to the first element of a stack to go through.
+ * @return The max number contained within the stack.
+ */
+int64_t	slab_max(t_slab **stack)
+{
+	int64_t	i;
+	t_slab	*tmp;
+
+	i = 0;
+	tmp = *stack;
+	while (tmp)
+	{
+		if (tmp->number > i)
+			i = tmp->number;
+		tmp = tmp->next;
+	}
+	return (i);
 }
