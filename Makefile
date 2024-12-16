@@ -15,7 +15,7 @@ CFILES		=	$(SRCDIR)push_swap.c\
 				$(SRCDIR)sort_utils.c \
 				$(SRCDIR)melodies.c \
 				$(SRCDIR)radix.c \
-				$(SRCDIR)merge.c
+				$(SRCDIR)reflection.c
 OBJS		=	$(CFILES:.c=.o)
 INCLDIR		=	include/
 IFILES		=	push_swap.h
@@ -25,7 +25,7 @@ LIBFT		=	$(LIBFTDIR)libftprintf.a
 all:			$(NAME)
 
 
-$(NAME):		$(LIBFT) $(OBJS)
+$(NAME):		$(OBJS) $(LIBFT)
 				$(CC) $(CFLAGS) $^ -o $@
 
 %.o:			%.c

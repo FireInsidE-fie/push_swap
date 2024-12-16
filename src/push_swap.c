@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:49:24 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/16 09:46:22 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/16 13:23:40 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ int	main(int argc, char **argv)
 	else if (nb_count == 5)
 		ft_melody(stack1, stack2);
 	else
-		ft_merge(stack1, stack2);
+		ft_reflection(stack1, stack2);
+		// ft_radix(stack1, stack2);
+	print_stack(stack1);
 	ft_kill(stack1, stack2, 0);
 }

@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:46:51 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/16 09:46:17 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/16 13:22:56 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void		ft_roxy(t_slab **stack1, t_slab **stack2);
 void		ft_ash(t_slab **stack1, t_slab **stack2);
 void		ft_melody(t_slab **stack1, t_slab **stack2);
 void		ft_radix(t_slab **stack1, t_slab **stack2);
-void		ft_merge(t_slab **stack1, t_slab **stack2);
+void		ft_reflection(t_slab **stack1, t_slab **stack2);
 
 // Input parsing functions
 t_slab		**parse_input(int argc, char **argv);
