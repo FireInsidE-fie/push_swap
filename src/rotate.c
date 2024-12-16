@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 12:33:02 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/10 10:23:48 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/16 10:12:22 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_rb(t_slab **stack1, t_slab **stack2, int silenced)
 	last = *stack2;
 	while (last->next)
 		last = last->next;
-	*stack1 = first->next;
+	*stack2 = first->next;
 	last->next = first;
 	first->next = NULL;
 }
