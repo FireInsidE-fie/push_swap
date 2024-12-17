@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:03:18 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/16 09:37:16 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/17 10:05:19 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void	ft_melody(t_slab **stack1, t_slab **stack2)
 	ft_pb(stack1, stack2);
 	ft_pb(stack1, stack2);
 	if (!is_sorted(*stack2))
-		ft_sb(stack1, stack2, 0);
+		ft_sb(stack1, stack2, FALSE);
 	ft_roxy(stack1, stack2);
 	push_back(stack1, stack2);
 }

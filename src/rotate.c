@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 12:33:02 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/16 10:12:22 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/17 10:05:40 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,6 @@ void	ft_rb(t_slab **stack1, t_slab **stack2, int silenced)
 void	ft_rr(t_slab **stack1, t_slab **stack2)
 {
 	ft_printf("rr\n");
-	ft_ra(stack1, stack2, 1);
-	ft_rb(stack1, stack2, 1);
+	ft_ra(stack1, stack2, TRUE);
+	ft_rb(stack1, stack2, TRUE);
 }
