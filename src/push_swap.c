@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:49:24 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/17 10:37:25 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:44:03 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,13 @@ void	print_stack(t_slab **list)
 
 	if (!list || !(*list))
 		return ;
+	ft_printf("---\n");
 	slab = *list;
 	while (slab)
 	{
 		ft_printf("%d : %d\n", slab->index, slab->number);
 		slab = slab->next;
 	}
-	ft_printf("---\n");
 }
 
 int	main(int argc, char **argv)

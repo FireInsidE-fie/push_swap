@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:21:23 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/19 17:43:24 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:50:39 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,15 @@ t_slab	*get_min_unindexed(t_slab *lst)
 		lst = lst->next;
 	}
 	return (slab);
+}
+
+void	clear_indexes(t_slab *lst)
+{
+	while (lst)
+	{
+		lst->index = 0;
+		lst = lst->next;
+	}
 }
 
 void	index_stack(t_slab *lst)
