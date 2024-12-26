@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 09:26:22 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/19 14:55:53 by estettle         ###   ########.fr       */
+/*   Updated: 2024/12/26 15:26:43 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,25 @@ static void	split_push(t_slab **stack1, t_slab **stack2)
 	}
 }
 
+static void push_back(t_slab **stack1, t_slab **stack2)
+{
+	t_slab	*slab;
+	t_slab	*tmp;
+	int		index;
+
+	slab = *stack2;
+	tmp = *stack2;
+	while (tmp)
+	{
+		if (tmp->index > slab->index)
+			slab = tmp;
+		tmp = tmp->next;
+	}
+	index = slab->index;
+	// then pretty much just push each element index by index, decreasing to end
+	// with a sorted stack1
+}
+
 void	ft_reflection(t_slab **stack1, t_slab **stack2)
 {
 	while (slab_count(*stack1) > 3)
@@ -52,8 +71,8 @@ void	ft_reflection(t_slab **stack1, t_slab **stack2)
 		print_stack(stack2);
 	}
 	ft_roxy(stack1, stack2);
-	print_stack(stack1);
-	clear_indexes(*stack2);
-	index_stack(*stack2);
-	print_stack(stack2);
+	print_stack(stack1); // debug
+	clear_indexes(*stack2); // debug
+	index_stack(*stack2); // debug
+	print_stack(stack2); // debug
 }
