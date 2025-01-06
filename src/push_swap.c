@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:49:24 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/17 17:44:03 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/06 14:06:07 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,6 @@ int	main(int argc, char **argv)
 	else
 		ft_reflection(stack1, stack2);
 		// ft_radix(stack1, stack2);
+	print_stack(stack1); // debug
 	ft_kill(stack1, stack2, 0);
 }

@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:21:23 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/17 17:50:39 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/06 14:03:48 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,20 +70,18 @@ t_slab	*get_min_unindexed(t_slab *lst)
 	return (slab);
 }
 
-void	clear_indexes(t_slab *lst)
-{
-	while (lst)
-	{
-		lst->index = 0;
-		lst = lst->next;
-	}
-}
-
 void	index_stack(t_slab *lst)
 {
 	t_slab		*slab;
+	t_slab		*tmp;
 	int32_t		i;
 
+	tmp = lst;
+	while (tmp)
+	{
+		tmp->index = 0;
+		tmp = tmp->next;
+	}
 	slab = get_min_unindexed(lst);
 	i = 0;
 	while (slab)

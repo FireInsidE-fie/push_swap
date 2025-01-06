@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 09:26:22 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/03 16:07:14 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/06 14:02:52 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ static void	split_push(t_slab **stack1, t_slab **stack2)
 	int	slice_size;
 	int	index_limit;
 
-	clear_indexes(*stack1);
 	index_stack(*stack1);
 	i = 0;
 	slabs_a = slab_count(*stack1);
@@ -49,6 +48,7 @@ static void sort_back(t_slab **stack1, t_slab **stack2)
 	t_slab	*tmp;
 	int		index;
 
+	(void)stack1;
 	slab = *stack2;
 	tmp = *stack2;
 	while (tmp)
@@ -58,6 +58,7 @@ static void sort_back(t_slab **stack1, t_slab **stack2)
 		tmp = tmp->next;
 	}
 	index = slab->index;
+	ft_printf("\n\n%d\n", index);
 	// then pretty much just push each element index by index, decreasing to end
 	// with a sorted stack1
 }
@@ -72,7 +73,6 @@ void	ft_reflection(t_slab **stack1, t_slab **stack2)
 	}
 	ft_roxy(stack1, stack2);
 	print_stack(stack1); // debug
-	clear_indexes(*stack2); // debug
-	index_stack(*stack2); // debug
 	print_stack(stack2); // debug
+	sort_back(stack1, stack2);
 }
