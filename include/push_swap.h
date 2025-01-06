@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:46:51 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/06 14:02:33 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/06 14:17:55 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void		print_stack(t_slab **list);
 int8_t		is_sorted(t_slab *lst);
 t_slab		*get_min_unindexed(t_slab *lst);
 void		index_stack(t_slab *lst);
+void		findex_stack(t_slab *lst);
 int64_t		ft_atol(const char *str);
 void		push_back(t_slab **stack1, t_slab **stack2);
 int64_t		slab_max(t_slab **stack);

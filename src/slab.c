@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 12:46:30 by estettle          #+#    #+#             */
-/*   Updated: 2024/11/20 13:56:52 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/06 14:23:09 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ t_slab	*slab_new(int64_t nb, int32_t index)
 		return (NULL);
 	new_slab->number = nb;
 	new_slab->index = index;
+	new_slab->final_position = index;
 	new_slab->next = NULL;
 	return (new_slab);
 }

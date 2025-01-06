@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 10:16:48 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/13 14:33:02 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/06 15:07:55 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,19 @@ int64_t	ft_atol(const char *str)
 			converted *= 10;
 	}
 	return (converted * sign);
+}
+
+int32_t	slab_count(t_slab *lst)
+{
+	int32_t	slab_count;
+
+	slab_count = 0;
+	while (lst)
+	{
+		slab_count++;
+		lst = lst->next;
+	}
+	return (slab_count);
 }
 
 /**
