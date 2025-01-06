@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 09:26:22 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/06 14:21:47 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/06 15:13:28 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static void	split_push(t_slab **stack1, t_slab **stack2)
 	}
 }
 
-static void sort_back(t_slab **stack1, t_slab **stack2)
+static void	sort_back(t_slab **stack1, t_slab **stack2)
 {
 	t_slab	*slab;
 	t_slab	*tmp;

@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:21:23 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/06 15:09:27 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/06 15:12:51 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,7 @@ void	findex_stack(t_slab *lst)
 		tmp->final_position = 0;
 		tmp = tmp->next;
 	}
-	slab = get_min_funindexed(lst); // problem with the get_min_unindexed function : needs to use final_position instead of index
+	slab = get_min_funindexed(lst);
 	i = 0;
 	while (slab)
 	{
