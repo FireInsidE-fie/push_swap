@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 09:26:22 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/06 15:13:28 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/07 15:16:14 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	split_push(t_slab **stack1, t_slab **stack2)
 	slice_size = slabs_a / 3;
 	index_limit = slabs_a - slice_size;
 	// ft_printf("%d\n\n", index_limit); // debug
-	while (i < slabs_a)
+	while (slab_count(*stack1) > 3 && i < slabs_a)
 	{
 		if ((*stack1)->index <= index_limit)
 		{
@@ -53,12 +53,11 @@ static void	sort_back(t_slab **stack1, t_slab **stack2)
 	tmp = *stack2;
 	while (tmp)
 	{
-		if (tmp->index > slab->index)
+		if (tmp->final_position > slab->final_position)
 			slab = tmp;
 		tmp = tmp->next;
 	}
-	index = slab->index;
-	ft_printf("\n\n%d\n", index);
+	index = slab->final_position;
 	// then pretty much just push each element index by index, decreasing to end
 	// with a sorted stack1
 }
