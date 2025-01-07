@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 09:26:22 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/07 17:47:07 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/07 18:14:37 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	split_push(t_slab **stack1, t_slab **stack2)
 	slabs_a = slab_count(*stack1);
 	slice_size = slabs_a / 3;
 	index_limit = slabs_a - slice_size;
-	ft_printf("%d\n\n", index_limit); // debug
+	// ft_printf("%d\n\n", index_limit); // debug
 	while (slab_count(*stack1) > 3 && i < slabs_a)
 	{
 		if ((*stack1)->index < index_limit)
@@ -60,12 +60,12 @@ static void	push_element(t_slab **stack1, t_slab **stack2, int32_t index)
 	}
 	if (counter > slab_count(*stack2))
 	{
-		while ((*stack2)->final_position)
+		while ((*stack2)->final_position != index)
 			ft_rrb(stack1, stack2, FALSE);
 	}
 	else
 	{
-		while ((*stack2)->final_position)
+		while ((*stack2)->final_position != index)
 			ft_rb(stack1, stack2, FALSE);
 	}
 	ft_pa(stack1, stack2);
@@ -90,7 +90,16 @@ static void	sort_back(t_slab **stack1, t_slab **stack2)
 	// then pretty much just push each element index by index, decreasing to end
 	// with a sorted stack1
 	while (index && *stack2)
-		push_element(stack1, stack2, index--);
+	{
+		tmp = *stack2;
+		while (tmp)
+		{
+			if (tmp->final_position == index)
+				push_element(stack1, stack2, index);
+			tmp = tmp->next;
+		}
+		index--;
+	}
 }
 
 void	ft_reflection(t_slab **stack1, t_slab **stack2)
@@ -103,7 +112,9 @@ void	ft_reflection(t_slab **stack1, t_slab **stack2)
 		//print_stack(stack2); // debug
 	}
 	ft_roxy(stack1, stack2);
-	print_stack(stack1); // debug
-	print_stack(stack2); // debug
+	// print_stack(stack1); // debug
+	// print_stack(stack2); // debug
 	sort_back(stack1, stack2);
+	// print_stack(stack1); // debug
+	// print_stack(stack2); // debug
 }
