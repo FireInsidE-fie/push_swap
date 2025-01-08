@@ -14,6 +14,8 @@
 
 #include "../include/push_swap.h"
 
+#define SLICE_COUNT 5
+
 static void	split_push(t_slab **stack1, t_slab **stack2)
 {
 	int	i;
@@ -24,7 +26,7 @@ static void	split_push(t_slab **stack1, t_slab **stack2)
 	index_stack(*stack1);
 	i = 0;
 	slabs_a = slab_count(*stack1);
-	slice_size = slabs_a / 3;
+	slice_size = slabs_a / SLICE_COUNT;
 	index_limit = slabs_a - slice_size;
 	// ft_printf("%d\n\n", index_limit); // debug
 	while (slab_count(*stack1) > 3 && i < slabs_a)
@@ -87,8 +89,6 @@ static void	sort_back(t_slab **stack1, t_slab **stack2)
 		tmp = tmp->next;
 	}
 	index = slab->final_position;
-	// then pretty much just push each element index by index, decreasing to end
-	// with a sorted stack1
 	while (index && *stack2)
 	{
 		tmp = *stack2;
