@@ -55,12 +55,14 @@ static void	push_element(t_slab **stack1, t_slab **stack2, int32_t index)
 
 	counter = 0;
 	tmp = *stack2;
+    // print_stack(stack1); // debug
+    // print_stack(stack2); // debug
 	while (tmp->final_position != index)
 	{
 		tmp = tmp->next;
 		counter++;
 	}
-	if (counter > slab_count(*stack2))
+	if (counter > slab_count(*stack2) / 2)
 	{
 		while ((*stack2)->final_position != index)
 			ft_rrb(stack1, stack2, FALSE);
@@ -115,6 +117,6 @@ void	ft_reflection(t_slab **stack1, t_slab **stack2)
 	// print_stack(stack1); // debug
 	// print_stack(stack2); // debug
 	sort_back(stack1, stack2);
-	print_stack(stack1); // debug
-	print_stack(stack2); // debug
+	// print_stack(stack1); // debug
+	// print_stack(stack2); // debug
 }
