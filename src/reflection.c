@@ -14,7 +14,7 @@
 
 #include "../include/push_swap.h"
 
-#define SLICE_COUNT 5
+#define SLICE_COUNT 2
 
 static void	split_push(t_slab **stack1, t_slab **stack2)
 {
@@ -115,6 +115,6 @@ void	ft_reflection(t_slab **stack1, t_slab **stack2)
 	// print_stack(stack1); // debug
 	// print_stack(stack2); // debug
 	sort_back(stack1, stack2);
-	// print_stack(stack1); // debug
-	// print_stack(stack2); // debug
+	print_stack(stack1); // debug
+	print_stack(stack2); // debug
 }
