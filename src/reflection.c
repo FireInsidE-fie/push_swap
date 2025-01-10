@@ -20,7 +20,7 @@
  * Imagine if on stack1, I had a tiny stack of unordered elements that I can just
  * get from stack2 and store at the very end of the first stack for future use.
  * It could be called something like cache and I could just fetch values from it.
- * For example, my stack 1 is currently 9 8 7, with 1 at the top. The next number
+ * For example, my stack 1 is currently 9 8 7, with 7 at the top. The next number
  * in stack2 is 5, so that won't do. I'll push it to stack1 but rotate it into
  * the "cache" for future use. Great news, next element in stack 2 is 6, so I can
  * directly push it. Now, where is 5 located? Oh right, in the cache! I just have
@@ -29,6 +29,10 @@
  * The idea would be to start with only a 1 number sized cache, and then maybe
  * try with bigger caches to see if the optimization would be substantial.
 */
+// static void	cache_slab(t_slab **stack1, t_slab **stack2)
+// {
+
+// }
 
 static void	split_push(t_slab **stack1, t_slab **stack2)
 {
@@ -77,15 +81,11 @@ static void	push_element(t_slab **stack1, t_slab **stack2, int32_t index)
 		counter++;
 	}
 	if (counter > slab_count(*stack2) / 2)
-	{
 		while ((*stack2)->final_position != index)
 			ft_rrb(stack1, stack2, FALSE);
-	}
 	else
-	{
 		while ((*stack2)->final_position != index)
 			ft_rb(stack1, stack2, FALSE);
-	}
 	ft_pa(stack1, stack2);
 }
 
@@ -95,7 +95,6 @@ static void	sort_back(t_slab **stack1, t_slab **stack2)
 	t_slab	*tmp;
 	int		index;
 
-	(void)stack1;
 	slab = *stack2;
 	tmp = *stack2;
 	while (tmp)
