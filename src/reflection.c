@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 09:26:22 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/11 23:02:10 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/11 23:10:34 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "../include/push_swap.h"
 
-#define SLICE_COUNT 2
+#define SLICE_COUNT	2
 
 static void	split_push(t_slab **stack1, t_slab **stack2)
 {
@@ -105,8 +105,9 @@ static void	sort_back(t_slab **stack1, t_slab **stack2)
 		tmp = tmp->next;
 	}
 	index = slab->final_position;
-	while (index && *stack2)
+	while (index)
 	{
+		// printf("%d\n", index);
 		if (has_cache(*stack1))
 		{
 			if (has_cache(*stack1)->final_position == index)
@@ -145,6 +146,6 @@ void	ft_reflection(t_slab **stack1, t_slab **stack2)
 	// print_stack(stack1); // debug
 	// print_stack(stack2); // debug
 	sort_back(stack1, stack2);
-	print_stack(stack1); // debug
-	print_stack(stack2); // debug
+	// print_stack(stack1); // debug
+	// print_stack(stack2); // debug
 }
