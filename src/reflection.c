@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 09:26:22 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/11 14:48:55 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/11 15:00:13 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,7 @@ static void	split_push(t_slab **stack1, t_slab **stack2)
 
 static void	cache_slab(t_slab **stack1, t_slab **stack2)
 {
-	t_slab	*tmp;
 
-	tmp = *stack1;
-	while ((tmp->next)->next)
-		tmp = tmp->next;
 }
 
 /**
