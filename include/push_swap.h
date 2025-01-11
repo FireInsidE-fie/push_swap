@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:46:51 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/06 14:17:55 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/11 14:54:34 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,12 @@
 // Libft and printf
 # include "../libftprintf/ft_printf.h"
 
-// Macros
-# define TRUE 1
-# define FALSE 0
+// Enums
+typedef enum e_bool
+{
+	FALSE = 0,
+	TRUE = 1
+} t_bool;
 
 // Linked list element
 typedef struct s_slab
