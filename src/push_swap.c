@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:49:24 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/06 15:13:12 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/11 23:26:16 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ void	print_stack(t_slab **list)
 
 int	main(int argc, char **argv)
 {
-	int32_t	nb_count;
 	t_slab	**stack1;
 	t_slab	**stack2;
 
@@ -70,20 +69,20 @@ int	main(int argc, char **argv)
 	stack2 = malloc(sizeof(t_slab *));
 	if (is_sorted(*stack1))
 		ft_kill(stack1, stack2, 0);
-	nb_count = slab_count(*stack1);
 	if (!stack2)
 		ft_kill(stack1, NULL, -1);
 	*stack2 = NULL;
-	if (nb_count == 2)
+	if (slab_count(*stack1) == 2)
 		ft_alis(stack1, stack2);
-	else if (nb_count == 3)
+	else if (slab_count(*stack1) == 3)
 		ft_roxy(stack1, stack2);
-	else if (nb_count == 4)
+	else if (slab_count(*stack1) == 4)
 		ft_ash(stack1, stack2);
-	else if (nb_count == 5)
+	else if (slab_count(*stack1) == 5)
 		ft_melody(stack1, stack2);
-	else
+	else if (slab_count(*stack1) <= 100)
 		ft_reflection(stack1, stack2);
-		// ft_radix(stack1, stack2);
+	else
+		ft_radix(stack1, stack2);
 	ft_kill(stack1, stack2, 0);
 }
