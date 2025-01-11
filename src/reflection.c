@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 09:26:22 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/11 16:14:30 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/11 23:02:10 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,14 +109,14 @@ static void	sort_back(t_slab **stack1, t_slab **stack2)
 	{
 		if (has_cache(*stack1))
 		{
-			if (has_cache(*stack1)->number == index)
+			if (has_cache(*stack1)->final_position == index)
 			{
 				ft_rra(stack1, stack2, FALSE);
 				index--;
 				continue;
 			}
 		}
-		else if ((*stack2)->number != index)
+		else if ((*stack2)->final_position != index)
 		{
 			ft_pa(stack1, stack2);
 			ft_ra(stack1, stack2, FALSE);
