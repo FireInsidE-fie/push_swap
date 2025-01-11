@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 14:46:42 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/11 15:34:54 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/11 15:46:39 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ t_slab	*has_cache(t_slab *stack)
 {
 	t_slab	*tmp;
 
+	if (!stack || !(stack->next) || !stack->next->next)
+		return NULL;
 	tmp = stack;
 	while (tmp->next->next)
 		tmp = tmp->next;
