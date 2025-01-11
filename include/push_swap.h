@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:46:51 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/11 15:05:45 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/11 15:35:00 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void		ft_radix(t_slab **stack1, t_slab **stack2);
 void		ft_reflection(t_slab **stack1, t_slab **stack2);
 
 // Reflection utils functions
-t_bool	has_cache(t_slab **stack);
+t_slab		*has_cache(t_slab *stack);
 
 // Input parsing functions
 t_slab		**parse_input(int argc, char **argv);
