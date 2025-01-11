@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 09:26:22 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/11 15:50:51 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/11 16:14:30 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,10 +107,19 @@ static void	sort_back(t_slab **stack1, t_slab **stack2)
 	index = slab->final_position;
 	while (index && *stack2)
 	{
-		if (has_cache(*stack1) && has_cache(*stack1)->number == index)
+		if (has_cache(*stack1))
 		{
-			ft_rra(stack1, stack2, FALSE);
-			continue;
+			if (has_cache(*stack1)->number == index)
+			{
+				ft_rra(stack1, stack2, FALSE);
+				index--;
+				continue;
+			}
+		}
+		else if ((*stack2)->number != index)
+		{
+			ft_pa(stack1, stack2);
+			ft_ra(stack1, stack2, FALSE);
 		}
 		tmp = *stack2;
 		while (tmp)
@@ -136,6 +145,6 @@ void	ft_reflection(t_slab **stack1, t_slab **stack2)
 	// print_stack(stack1); // debug
 	// print_stack(stack2); // debug
 	sort_back(stack1, stack2);
-	// print_stack(stack1); // debug
-	// print_stack(stack2); // debug
+	print_stack(stack1); // debug
+	print_stack(stack2); // debug
 }
