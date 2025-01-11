@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 09:26:22 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/11 23:10:34 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/11 23:29:55 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,7 @@ static void	split_push(t_slab **stack1, t_slab **stack2)
  * The idea would be to start with only a 1 number sized cache, and then maybe
  * try with bigger caches to see if the optimization would be substantial.
 */
-/*
-static void	cache_slab(t_slab **stack1, t_slab **stack2)
-{
 
-}
-*/
 /**
  * @brief Finds the element with the final_position int set to index in stack2,
  * brings it to the top of the stack then pushes it onto stack1.
@@ -107,7 +102,6 @@ static void	sort_back(t_slab **stack1, t_slab **stack2)
 	index = slab->final_position;
 	while (index)
 	{
-		// printf("%d\n", index);
 		if (has_cache(*stack1))
 		{
 			if (has_cache(*stack1)->final_position == index)
