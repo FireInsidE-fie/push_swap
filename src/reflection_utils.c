@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 14:46:42 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/13 15:10:25 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/13 15:55:38 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,14 @@ t_slab	*has_cache(t_slab *stack)
 	return (NULL);
 }
 
+/**
+ * @brief Checks if a cache element exists. If the element to be pushed to
+ * stack1 isn't the right one, pushes and rotates it to effectively put it into
+ * the "cache", an element at the bottom of stack1 than can be accessed when the
+ * time comes.
+ * If a cache exists and consists of the right slab (the index corresponds),
+ * reverse rotates it to put it in its place.
+ */
 void	process_cache(t_slab **stack1, t_slab **stack2, int *index)
 {
 	if (has_cache(*stack1))

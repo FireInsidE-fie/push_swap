@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:46:51 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/13 15:18:28 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/13 15:32:51 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef enum e_bool
 {
 	FALSE = 0,
 	TRUE = 1
-} t_bool;
+}	t_bool;
 
 // Linked list element
 typedef struct s_slab
