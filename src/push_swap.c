@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:49:24 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/11 23:26:16 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/13 15:26:24 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,12 @@ int	main(int argc, char **argv)
 		return (-1);
 	stack1 = parse_input(argc, argv);
 	stack2 = malloc(sizeof(t_slab *));
-	if (is_sorted(*stack1))
-		ft_kill(stack1, stack2, 0);
 	if (!stack2)
-		ft_kill(stack1, NULL, -1);
+		ft_kill(stack1, NULL, 1);
+	if (is_sorted(*stack1))
+		ft_kill(stack1, stack2, 2);
 	*stack2 = NULL;
+	slab_count(*stack1);
 	if (slab_count(*stack1) == 2)
 		ft_alis(stack1, stack2);
 	else if (slab_count(*stack1) == 3)

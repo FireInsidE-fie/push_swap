@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:46:51 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/13 15:08:49 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/13 15:18:28 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int32_t		slab_count(t_slab *lst);
 // Util and general use functions
 void		ft_kill(t_slab **stack1, t_slab **stack2, int error_code);
 void		print_stack(t_slab **list);
-int8_t		is_sorted(t_slab *lst);
+t_bool		is_sorted(t_slab *lst);
 t_slab		*get_min_unindexed(t_slab *lst);
 void		index_stack(t_slab *lst);
 void		findex_stack(t_slab *lst);

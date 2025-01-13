@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:03:18 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/17 10:05:19 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/13 15:29:28 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
  */
 void	ft_alis(t_slab **stack1, t_slab **stack2)
 {
-	if (*stack1 > (*stack1)->next)
+	if ((*stack1)->number > (*stack1)->next->number)
 		ft_sa(stack1, stack2, FALSE);
 }
 

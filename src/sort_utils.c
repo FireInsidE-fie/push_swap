@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:21:23 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/06 15:12:51 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/13 15:23:07 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  *
  * @return TRUE if sorted correctly, FALSE otherwise.
 */
-int8_t	is_sorted(t_slab *lst)
+t_bool	is_sorted(t_slab *lst)
 {
 	while (lst && lst->next)
 	{
