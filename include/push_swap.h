@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:46:51 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/11 15:35:00 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/13 15:08:49 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void		ft_reflection(t_slab **stack1, t_slab **stack2);
 
 // Reflection utils functions
 t_slab		*has_cache(t_slab *stack);
+void		process_cache(t_slab **stack1, t_slab **stack2, int *index);
 
 // Input parsing functions
 t_slab		**parse_input(int argc, char **argv);
