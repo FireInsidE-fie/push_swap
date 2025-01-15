@@ -30,7 +30,7 @@ $(NAME):		$(OBJS) $(LIBFT)
 				$(CC) $(CFLAGS) $^ -o $@
 
 %.o:			%.c
-				$(CC) $(CFLAGS) -g -c $^ -o $@
+				$(CC) $(CFLAGS) -c $^ -o $@
 
 $(LIBFT):	 	$(LIBFTDIR)/*.c
 				cd $(LIBFTDIR) && make
