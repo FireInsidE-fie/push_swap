@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 14:46:42 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/13 15:55:38 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/15 23:12:09 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	process_cache(t_slab **stack1, t_slab **stack2, int *index)
 			(*index)--;
 		}
 	}
-	else if ((*stack2)->final_position != *index)
+	else if (*stack2 && (*stack2)->final_position != *index)
 	{
 		ft_pa(stack1, stack2);
 		ft_ra(stack1, stack2, FALSE);

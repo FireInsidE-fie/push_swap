@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 09:26:22 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/13 15:53:44 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/15 23:18:02 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ static void	sort_back(t_slab **stack1, t_slab **stack2)
 		tmp = tmp->next;
 	}
 	index = slab->final_position;
-	while (index)
+	while (index > 0)
 	{
 		process_cache(stack1, stack2, &index);
 		tmp = *stack2;
