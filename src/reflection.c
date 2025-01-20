@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 09:26:22 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/15 23:18:02 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/20 13:16:08 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "../include/push_swap.h"
 
-#define SLICE_COUNT	2
+#define SLICE_COUNT	3
 
 /**
  * @brief Splits the stack1 into SLICE_COUNT slices (according to the slabs'
@@ -31,7 +31,7 @@ static void	split_push(t_slab **stack1, t_slab **stack2)
 	index_stack(*stack1);
 	i = 0;
 	slabs_a = slab_count(*stack1);
-	slice_size = slabs_a / SLICE_COUNT;
+	slice_size = slabs_a / SLICE_COUNT + 1;
 	index_limit = slabs_a - slice_size;
 	while (slab_count(*stack1) > 3 && i < slabs_a)
 	{
@@ -123,5 +123,9 @@ void	ft_reflection(t_slab **stack1, t_slab **stack2)
 	while (slab_count(*stack1) > 3)
 		split_push(stack1, stack2);
 	ft_roxy(stack1, stack2);
+	// print_stack(stack1);
+	// print_stack(stack2);
 	sort_back(stack1, stack2);
+	// print_stack(stack1);
+	// print_stack(stack2);
 }
