@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:49:24 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/27 13:46:47 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/27 14:26:41 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,27 +35,6 @@ void	ft_kill(t_slab **stack1, t_slab **stack2, int error_code)
 	if (error_code != 0)
 		write(2, "Error\n", 6);
 	exit(error_code);
-}
-
-/**
- * @brief Prints a given stack from top to bottom to stdout, followed by three
- * dashes.
- *
- * @param list A pointer to the first element of the stack.
- */
-void	print_stack(t_slab **list)
-{
-	t_slab	*slab;
-
-	if (!list || !(*list))
-		return ;
-	ft_printf("---\n");
-	slab = *list;
-	while (slab)
-	{
-		ft_printf("%d : %d\n", slab->final_position, slab->number);
-		slab = slab->next;
-	}
 }
 
 int	main(int argc, char **argv)
