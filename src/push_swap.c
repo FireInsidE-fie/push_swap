@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:49:24 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/13 15:32:11 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/27 13:46:47 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	main(int argc, char **argv)
 	if (!stack2)
 		ft_kill(stack1, NULL, 1);
 	if (is_sorted(*stack1))
-		ft_kill(stack1, stack2, 2);
+		ft_kill(stack1, stack2, 0);
 	*stack2 = NULL;
 	if (slab_count(*stack1) == 2)
 		ft_alis(stack1, stack2);
