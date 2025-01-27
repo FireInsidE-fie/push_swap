@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:10:52 by estettle          #+#    #+#             */
-/*   Updated: 2024/12/11 12:03:41 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/27 14:09:11 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	check_chars(int argc, char **argv)
 			if (is_empty && ft_isprint(argv[i][j]))
 				is_empty = 0;
 			if (argv[i][j] != ' ' && argv[i][j] != '-' &&
-					!ft_isdigit(argv[i][j]))
+					argv[i][j] != '+' && !ft_isdigit(argv[i][j]))
 				invalid_char = 1;
 			j++;
 		}
