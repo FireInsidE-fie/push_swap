@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 10:16:48 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/06 15:07:55 by estettle         ###   ########.fr       */
+/*   Updated: 2025/01/28 13:46:23 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int64_t	slab_max(t_slab **stack)
 	int64_t	i;
 	t_slab	*tmp;
 
-	i = 0;
+	i = LONG_MIN;
 	tmp = *stack;
 	while (tmp)
 	{
