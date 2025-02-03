@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:10:52 by estettle          #+#    #+#             */
-/*   Updated: 2025/02/03 18:46:23 by estettle         ###   ########.fr       */
+/*   Updated: 2025/02/03 19:56:42 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	check_ints(t_slab **lst)
 		tmp = slab->next;
 		while (tmp)
 		{
-			if (tmp->number == slab->number)
+			if (tmp != slab && tmp->number == slab->number)
 				ft_kill(lst, NULL, -1);
 			tmp = tmp->next;
 		}
@@ -126,11 +126,16 @@ t_slab	**parse_input(int argc, char **argv)
 	*integers = NULL;
 	while (i < argc)
 	{
+		ft_printf("%d\n", ft_atol(argv[i]));
 		slab_add_back(integers, slab_new(ft_atol(argv[i]), 0));
 		while (*argv[i])
 		{
 			if (*argv[i] == ' ')
+			{
 				slab_add_back(integers, slab_new(ft_atol(++argv[i]), 0));
+				while (*argv[i] == ' ')
+					argv[i]++;
+			}
 			argv[i]++;
 		}
 		i++;
