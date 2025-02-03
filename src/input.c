@@ -6,11 +6,32 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:10:52 by estettle          #+#    #+#             */
-/*   Updated: 2025/02/03 16:15:31 by estettle         ###   ########.fr       */
+/*   Updated: 2025/02/03 18:46:23 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+static int	check_chars(char *str)
+{
+	int	i;
+	int	invalid_char;
+
+	i = 0;
+	invalid_char = 0;
+	while (str[i])
+	{
+		if (
+			((i == 0 || str[i - 1] == ' ') && str[i] != ' ' && str[i] != '-'
+				&& str[i] != '+' && !ft_isdigit(str[i]))
+			|| (i != 0 && str[i - 1] != ' ' && str[i] != ' '
+				&& !ft_isdigit(str[i]))
+		)
+			invalid_char = 1;
+		i++;
+	}
+	return (invalid_char);
+}
 
 /**
  * @brief Checks all arguments inputted to the program for invalid characters.
@@ -23,30 +44,20 @@
  *
  * @param argc The number of arguments passed to the program.
  * @param argv The arguments passed to the program.
- */
-void	check_chars(int argc, char **argv)
+*/
+static void	check_args(int argc, char **argv)
 {
 	int	i;
-	int	j;
 	int	is_empty;
 	int	invalid_char;
 
 	i = 1;
-	invalid_char = 0;
 	while (i < argc)
 	{
-		is_empty = 1;
-		j = 0;
-		while (argv[i][j])
-		{
-			if (is_empty && ft_isprint(argv[i][j]))
-				is_empty = 0;
-			if (argv[i][j] != ' ' && argv[i][j] != '-' &&
-					argv[i][j] != '+' && !ft_isdigit(argv[i][j]))
-				// Need a check for when characters after the first one aren't numbers (+ or - included)
-				invalid_char = 1;
-			j++;
-		}
+		is_empty = 0;
+		if (!*(argv[i]) && !ft_isprint(*(argv[i])))
+			is_empty = 1;
+		invalid_char = check_chars(argv[i]);
 		if (is_empty || invalid_char)
 			ft_kill(NULL, NULL, -1);
 		i++;
@@ -108,14 +119,13 @@ t_slab	**parse_input(int argc, char **argv)
 	t_slab		**integers;
 
 	i = 1;
-	check_chars(argc, argv);
+	check_args(argc, argv);
 	integers = malloc(sizeof(t_slab *));
 	if (!integers)
 		ft_kill(NULL, NULL, -1);
 	*integers = NULL;
 	while (i < argc)
 	{
-		ft_printf("%d\n", ft_atol(argv[i]));
 		slab_add_back(integers, slab_new(ft_atol(argv[i]), 0));
 		while (*argv[i])
 		{
