@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:10:52 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/27 14:09:11 by estettle         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:15:31 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	check_chars(int argc, char **argv)
 	int	invalid_char;
 
 	i = 1;
-	is_empty = 0;
 	invalid_char = 0;
 	while (i < argc)
 	{
@@ -44,6 +43,7 @@ void	check_chars(int argc, char **argv)
 				is_empty = 0;
 			if (argv[i][j] != ' ' && argv[i][j] != '-' &&
 					argv[i][j] != '+' && !ft_isdigit(argv[i][j]))
+				// Need a check for when characters after the first one aren't numbers (+ or - included)
 				invalid_char = 1;
 			j++;
 		}
@@ -115,6 +115,7 @@ t_slab	**parse_input(int argc, char **argv)
 	*integers = NULL;
 	while (i < argc)
 	{
+		ft_printf("%d\n", ft_atol(argv[i]));
 		slab_add_back(integers, slab_new(ft_atol(argv[i]), 0));
 		while (*argv[i])
 		{
