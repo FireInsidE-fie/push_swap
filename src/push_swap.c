@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:49:24 by estettle          #+#    #+#             */
-/*   Updated: 2025/02/04 10:37:50 by estettle         ###   ########.fr       */
+/*   Updated: 2025/02/04 15:25:56 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ int	main(int argc, char **argv)
 	stack2 = malloc(sizeof(t_slab *));
 	if (!stack2)
 		ft_kill(stack1, NULL, 1);
+	*stack2 = NULL;
 	if (is_sorted(*stack1))
 		ft_kill(stack1, stack2, 0);
-	*stack2 = NULL;
 	if (slab_count(*stack1) == 2)
 		ft_alis(stack1, stack2);
 	else if (slab_count(*stack1) == 3)

@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:10:52 by estettle          #+#    #+#             */
-/*   Updated: 2025/02/04 11:09:12 by estettle         ###   ########.fr       */
+/*   Updated: 2025/02/04 15:23:14 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,6 +137,7 @@ t_slab	**parse_input(int argc, char **argv)
 	integers = malloc(sizeof(t_slab *));
 	if (!integers)
 		ft_kill(NULL, NULL, -1);
+	*integers = NULL;
 	while (i < argc)
 	{
 		slab_add_back(integers, slab_new(ft_atol(argv[i]), 0));
@@ -148,5 +149,6 @@ t_slab	**parse_input(int argc, char **argv)
 		}
 		i++;
 	}
-	return (check_ints(integers), integers);
+	check_ints(integers);
+	return (integers);
 }
