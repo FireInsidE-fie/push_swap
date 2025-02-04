@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:10:52 by estettle          #+#    #+#             */
-/*   Updated: 2025/02/04 10:49:51 by estettle         ###   ########.fr       */
+/*   Updated: 2025/02/04 11:09:12 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,9 @@ void	go_to_next_number(char **str)
 {
 	while (**str == ' ')
 		(*str)++;
-	while (ft_isdigit(**str))
+	while (ft_isdigit(**str) || **str == '-' || **str == '+')
+		(*str)++;
+	while (**str == ' ')
 		(*str)++;
 }
 
@@ -141,13 +143,8 @@ t_slab	**parse_input(int argc, char **argv)
 		go_to_next_number(&argv[i]);
 		while (*argv[i])
 		{
-			if (*argv[i] == ' ')
-			{
-				go_to_next_number(&argv[i]);
-				if (*argv[i])
-					slab_add_back(integers, slab_new(ft_atol(argv[i]++), 0));
-			}
-			argv[i]++;
+			slab_add_back(integers, slab_new(ft_atol(argv[i]), 0));
+			go_to_next_number(&argv[i]);
 		}
 		i++;
 	}
