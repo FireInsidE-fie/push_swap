@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:10:52 by estettle          #+#    #+#             */
-/*   Updated: 2025/02/03 19:56:42 by estettle         ###   ########.fr       */
+/*   Updated: 2025/02/04 10:49:51 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ static int	check_chars(char *str)
 				&& str[i] != '+' && !ft_isdigit(str[i]))
 			|| (i != 0 && str[i - 1] != ' ' && str[i] != ' '
 				&& !ft_isdigit(str[i]))
+			|| ((str[i] == '-' || str[i] == '+') && !ft_isdigit(str[i + 1]))
 		)
 			invalid_char = 1;
 		i++;
@@ -97,6 +98,17 @@ void	check_ints(t_slab **lst)
 }
 
 /**
+ * @brief Skips spaces and numbers to go to the next number in the str pointer.
+ */
+void	go_to_next_number(char **str)
+{
+	while (**str == ' ')
+		(*str)++;
+	while (ft_isdigit(**str))
+		(*str)++;
+}
+
+/**
  * @brief Takes the raw input from push swap and parses it into a chained list
  * of integers.
  *
@@ -123,23 +135,21 @@ t_slab	**parse_input(int argc, char **argv)
 	integers = malloc(sizeof(t_slab *));
 	if (!integers)
 		ft_kill(NULL, NULL, -1);
-	*integers = NULL;
 	while (i < argc)
 	{
-		ft_printf("%d\n", ft_atol(argv[i]));
 		slab_add_back(integers, slab_new(ft_atol(argv[i]), 0));
+		go_to_next_number(&argv[i]);
 		while (*argv[i])
 		{
 			if (*argv[i] == ' ')
 			{
-				slab_add_back(integers, slab_new(ft_atol(++argv[i]), 0));
-				while (*argv[i] == ' ')
-					argv[i]++;
+				go_to_next_number(&argv[i]);
+				if (*argv[i])
+					slab_add_back(integers, slab_new(ft_atol(argv[i]++), 0));
 			}
 			argv[i]++;
 		}
 		i++;
 	}
-	check_ints(integers);
-	return (integers);
+	return (check_ints(integers), integers);
 }

@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:49:24 by estettle          #+#    #+#             */
-/*   Updated: 2025/02/03 19:25:01 by estettle         ###   ########.fr       */
+/*   Updated: 2025/02/04 10:37:50 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (-1);
 	stack1 = parse_input(argc, argv);
-	ft_printf("[!] - Finished parsing\n");
 	stack2 = malloc(sizeof(t_slab *));
 	if (!stack2)
 		ft_kill(stack1, NULL, 1);
