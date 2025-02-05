@@ -6,7 +6,7 @@
 /*   By: estettle <estettle@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 09:26:22 by estettle          #+#    #+#             */
-/*   Updated: 2025/01/28 13:25:31 by estettle         ###   ########.fr       */
+/*   Updated: 2025/02/05 11:04:22 by estettle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 #include "../include/push_swap.h"
 
-#define SLICE_COUNT	3
+#ifndef SLICE_COUNT
+# define SLICE_COUNT	3
+#endif
 
 /**
  * @brief Splits the stack1 into SLICE_COUNT slices (according to the slabs'
